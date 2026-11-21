@@ -1,0 +1,95 @@
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$ vi /home/oracle/restore_t24dev1.rman
+[oracle@ip-10-166-132-86 DATAFILE]$ grep -v -E "^__|^# Oracle init|^_no_recovery_through_resetlogs|^_ksb_restart|^connection_brokers|^core_dump_dest|^_diag_adr_trace_dest|^db_recovery_file_dest" /tmp/current.ora > /home/oracle/initT24dev1_restore.ora
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$ cat >> /home/oracle/initT24dev1_restore.ora <<'EOF'
+db_unique_name='T24dev1'
+db_recovery_file_dest_size=300G
+db_recovery_file_dest='/T24DEV1/FRA'
+EOF
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$ grep -E "db_unique|recovery|control_files|db_name|_no_recovery" /home/oracle/initT24dev1_restore.ora
+control_files='/T24DEV1/controlfile/control.ctl'
+db_name='T24rdbms'
+db_unique_name='T24dev1'
+db_recovery_file_dest_size=300G
+db_recovery_file_dest='/T24DEV1/FRA'
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$ mkdir -p /T24DEV1/REDO /T24DEV1/FRA /T24DEV1/ARCH
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$
+[oracle@ip-10-166-132-86 DATAFILE]$ rman target /
+
+RMAN>
+
+RMAN>
+
+RMAN> SHUTDOWN IMMEDIATE;
+
+database dismounted
+Oracle instance shut down
+
+RMAN> STARTUP NOMOUNT PFILE='/home/oracle/initT24dev1_restore.ora';
+
+connected to target database (not started)
+Oracle instance started
+
+Total System Global Area    9965664248 bytes
+
+Fixed Size                    12445688 bytes
+Variable Size               1509949440 bytes
+Database Buffers            8422162432 bytes
+Redo Buffers                  21106688 bytes
+
+RMAN>
+
+RMAN>
+
+RMAN> ALTER DATABASE MOUNT;
+
+Statement processed
+
+RMAN> LIST BACKUP SUMMARY;
+
+
+List of Backups
+===============
+Key     TY LV S Device Type Completion Time #Pieces #Copies Compressed Tag
+------- -- -- - ----------- --------------- ------- ------- ---------- ---
+21715   B  F  A DISK        24-SEP-26       1       1       NO         T24PRD_20260923_SPF
+22012   B  F  A DISK        23-SEP-26       13      1       YES        T24PRD_20260923_FULL
+22027   B  F  A DISK        23-SEP-26       13      1       YES        T24PRD_20260923_FULL
+22036   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22039   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22040   B  F  A DISK        23-SEP-26       14      1       YES        T24PRD_20260923_FULL
+22045   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22049   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22051   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22052   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22055   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22057   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22058   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22059   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22060   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22061   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22063   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22064   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22065   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22066   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22067   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22070   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22071   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22072   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22073   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22074   B  F  A DISK        24-SEP-26       1       1       NO         T24PRD_20260923_CONTROL
+
+RMAN>
+
+RMAN>
+
+RMAN>
