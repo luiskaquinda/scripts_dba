@@ -1,0 +1,112 @@
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ cd /FRA
+[oracle@ip-10-166-132-86 FRA]$
+[oracle@ip-10-166-132-86 FRA]$
+[oracle@ip-10-166-132-86 FRA]$ ll
+total 743521420
+drwxr-xr-x. 4 oracle oinstall           30 Sep 23 17:26 20260923
+drwxr-xr-x. 3 oracle oinstall           19 Oct  5 15:50 T24BKP
+drwxr-xr-x. 3 oracle oracle             23 Nov 19 16:05 T24DEV1
+-rw-------. 1 oracle oinstall        28256 Oct  2 01:43 nohup.out
+-rw-r--r--. 1 oracle oinstall   5717326588 Oct  5 15:41 oem_20261004.tgz
+-rw-r--r--. 1 oracle oinstall 755646000911 Sep 28 13:16 t24prd_20260923_antes.tgz
+[oracle@ip-10-166-132-86 FRA]$
+[oracle@ip-10-166-132-86 FRA]$
+[oracle@ip-10-166-132-86 FRA]$ cd 20260923
+[oracle@ip-10-166-132-86 20260923]$
+[oracle@ip-10-166-132-86 20260923]$
+[oracle@ip-10-166-132-86 20260923]$ ll
+total 40
+drwxr-xr-x. 2 oracle oinstall  8192 Sep 24 02:17 arch
+drwxr-xr-x. 2 oracle oinstall 24576 Sep 24 01:28 full
+[oracle@ip-10-166-132-86 20260923]$
+[oracle@ip-10-166-132-86 20260923]$
+[oracle@ip-10-166-132-86 20260923]$ cd arch
+[oracle@ip-10-166-132-86 arch]$
+[oracle@ip-10-166-132-86 arch]$
+[oracle@ip-10-166-132-86 arch]$ ll
+total 135224276
+-rw-r-----. 1 oracle oinstall 2145443840 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0a53389m_22538_1_1
+-rw-r-----. 1 oracle oinstall 2145468928 Sep 24 02:04 t24prd_20260923_arc_antes_COB_0a53389m_22538_2_1
+-rw-r-----. 1 oracle oinstall 1583324672 Sep 24 02:14 t24prd_20260923_arc_antes_COB_0a53389m_22538_3_1
+-rw-r-----. 1 oracle oinstall 2145465856 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0b53389n_22539_1_1
+-rw-r-----. 1 oracle oinstall 2145504768 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0b53389n_22539_2_1
+-rw-r-----. 1 oracle oinstall 2145474560 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0b53389n_22539_3_1
+-rw-r-----. 1 oracle oinstall  272240128 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0b53389n_22539_4_1
+-rw-r-----. 1 oracle oinstall 2145411584 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0c53389n_22540_1_1
+-rw-r-----. 1 oracle oinstall 2145467904 Sep 24 02:03 t24prd_20260923_arc_antes_COB_0c53389n_22540_2_1
+-rw-r-----. 1 oracle oinstall 2067274752 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0c53389n_22540_3_1
+-rw-r-----. 1 oracle oinstall 2145518080 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0d53389o_22541_1_1
+-rw-r-----. 1 oracle oinstall 2145577472 Sep 24 02:01 t24prd_20260923_arc_antes_COB_0d53389o_22541_2_1
+-rw-r-----. 1 oracle oinstall 2145574400 Sep 24 02:15 t24prd_20260923_arc_antes_COB_0d53389o_22541_3_1
+-rw-r-----. 1 oracle oinstall  239521792 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0d53389o_22541_4_1
+-rw-r-----. 1 oracle oinstall 2145646080 Sep 24 01:44 t24prd_20260923_arc_antes_COB_0e53389o_22542_1_1
+-rw-r-----. 1 oracle oinstall 2145550848 Sep 24 02:01 t24prd_20260923_arc_antes_COB_0e53389o_22542_2_1
+-rw-r-----. 1 oracle oinstall 2145638912 Sep 24 02:15 t24prd_20260923_arc_antes_COB_0e53389o_22542_3_1
+-rw-r-----. 1 oracle oinstall  342333440 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0e53389o_22542_4_1
+-rw-r-----. 1 oracle oinstall 2145496576 Sep 24 01:44 t24prd_20260923_arc_antes_COB_0f53389p_22543_1_1
+-rw-r-----. 1 oracle oinstall 2145501184 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0f53389p_22543_2_1
+-rw-r-----. 1 oracle oinstall 2145586688 Sep 24 02:15 t24prd_20260923_arc_antes_COB_0f53389p_22543_3_1
+-rw-r-----. 1 oracle oinstall  342730240 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0f53389p_22543_4_1
+-rw-r-----. 1 oracle oinstall 2145500160 Sep 24 01:46 t24prd_20260923_arc_antes_COB_0g53389q_22544_1_1
+-rw-r-----. 1 oracle oinstall 2145642496 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0g53389q_22544_2_1
+-rw-r-----. 1 oracle oinstall 2145487872 Sep 24 02:15 t24prd_20260923_arc_antes_COB_0g53389q_22544_3_1
+-rw-r-----. 1 oracle oinstall   62859264 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0g53389q_22544_4_1
+-rw-r-----. 1 oracle oinstall 2145476096 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0h53389r_22545_1_1
+-rw-r-----. 1 oracle oinstall 2145390080 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0h53389r_22545_2_1
+-rw-r-----. 1 oracle oinstall 2145450496 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0h53389r_22545_3_1
+-rw-r-----. 1 oracle oinstall  144614912 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0h53389r_22545_4_1
+-rw-r-----. 1 oracle oinstall 2145544192 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0i53389s_22546_1_1
+-rw-r-----. 1 oracle oinstall 2145644544 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0i53389s_22546_2_1
+-rw-r-----. 1 oracle oinstall 2145563648 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0i53389s_22546_3_1
+-rw-r-----. 1 oracle oinstall   85788672 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0i53389s_22546_4_1
+-rw-r-----. 1 oracle oinstall 2145485824 Sep 24 01:46 t24prd_20260923_arc_antes_COB_0j53389u_22547_1_1
+-rw-r-----. 1 oracle oinstall 2145492480 Sep 24 02:03 t24prd_20260923_arc_antes_COB_0j53389u_22547_2_1
+-rw-r-----. 1 oracle oinstall 2145567232 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0j53389u_22547_3_1
+-rw-r-----. 1 oracle oinstall  258354176 Sep 24 02:17 t24prd_20260923_arc_antes_COB_0j53389u_22547_4_1
+-rw-r-----. 1 oracle oinstall 2145637888 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0k53389v_22548_1_1
+-rw-r-----. 1 oracle oinstall 2145475584 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0k53389v_22548_2_1
+-rw-r-----. 1 oracle oinstall 2145501696 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0k53389v_22548_3_1
+-rw-r-----. 1 oracle oinstall  110100992 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0k53389v_22548_4_1
+-rw-r-----. 1 oracle oinstall 2145608704 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0l5338a0_22549_1_1
+-rw-r-----. 1 oracle oinstall 2145606144 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0l5338a0_22549_2_1
+-rw-r-----. 1 oracle oinstall 2145574400 Sep 24 02:15 t24prd_20260923_arc_antes_COB_0l5338a0_22549_3_1
+-rw-r-----. 1 oracle oinstall  208684032 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0l5338a0_22549_4_1
+-rw-r-----. 1 oracle oinstall 2145399296 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0m5338a2_22550_1_1
+-rw-r-----. 1 oracle oinstall 2145525248 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0m5338a2_22550_2_1
+-rw-r-----. 1 oracle oinstall 2145506304 Sep 24 02:15 t24prd_20260923_arc_antes_COB_0m5338a2_22550_3_1
+-rw-r-----. 1 oracle oinstall  223341568 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0m5338a2_22550_4_1
+-rw-r-----. 1 oracle oinstall 2145491456 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0n5338a3_22551_1_1
+-rw-r-----. 1 oracle oinstall 2145460736 Sep 24 02:03 t24prd_20260923_arc_antes_COB_0n5338a3_22551_2_1
+-rw-r-----. 1 oracle oinstall 2145580032 Sep 24 02:16 t24prd_20260923_arc_antes_COB_0n5338a3_22551_3_1
+-rw-r-----. 1 oracle oinstall  306208256 Sep 24 02:17 t24prd_20260923_arc_antes_COB_0n5338a3_22551_4_1
+-rw-r-----. 1 oracle oinstall 2145525248 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0o5338a5_22552_1_1
+-rw-r-----. 1 oracle oinstall 2145397248 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0o5338a5_22552_2_1
+-rw-r-----. 1 oracle oinstall 1843637248 Sep 24 02:14 t24prd_20260923_arc_antes_COB_0o5338a5_22552_3_1
+-rw-r-----. 1 oracle oinstall 2145402880 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0p5338a6_22553_1_1
+-rw-r-----. 1 oracle oinstall 2145567744 Sep 24 02:03 t24prd_20260923_arc_antes_COB_0p5338a6_22553_2_1
+-rw-r-----. 1 oracle oinstall 1738921472 Sep 24 02:14 t24prd_20260923_arc_antes_COB_0p5338a6_22553_3_1
+-rw-r-----. 1 oracle oinstall 2145642496 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0q5338a8_22554_1_1
+-rw-r-----. 1 oracle oinstall 2145450496 Sep 24 02:03 t24prd_20260923_arc_antes_COB_0q5338a8_22554_2_1
+-rw-r-----. 1 oracle oinstall 1831809536 Sep 24 02:15 t24prd_20260923_arc_antes_COB_0q5338a8_22554_3_1
+-rw-r-----. 1 oracle oinstall 2145577472 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0r5338a9_22555_1_1
+-rw-r-----. 1 oracle oinstall 2145597952 Sep 24 02:03 t24prd_20260923_arc_antes_COB_0r5338a9_22555_2_1
+-rw-r-----. 1 oracle oinstall 1508713472 Sep 24 02:13 t24prd_20260923_arc_antes_COB_0r5338a9_22555_3_1
+-rw-r-----. 1 oracle oinstall 2145517568 Sep 24 01:46 t24prd_20260923_arc_antes_COB_0s5338aa_22556_1_1
+-rw-r-----. 1 oracle oinstall 2145550336 Sep 24 02:04 t24prd_20260923_arc_antes_COB_0s5338aa_22556_2_1
+-rw-r-----. 1 oracle oinstall  156795904 Sep 24 02:05 t24prd_20260923_arc_antes_COB_0s5338aa_22556_3_1
+-rw-r-----. 1 oracle oinstall 2145494016 Sep 24 01:46 t24prd_20260923_arc_antes_COB_0t5338ac_22557_1_1
+-rw-r-----. 1 oracle oinstall 2145508352 Sep 24 02:04 t24prd_20260923_arc_antes_COB_0t5338ac_22557_2_1
+-rw-r-----. 1 oracle oinstall  158951936 Sep 24 02:05 t24prd_20260923_arc_antes_COB_0t5338ac_22557_3_1
+-rw-r-----. 1 oracle oinstall 2145517056 Sep 24 01:46 t24prd_20260923_arc_antes_COB_0u5338ae_22558_1_1
+-rw-r-----. 1 oracle oinstall 2145630208 Sep 24 02:04 t24prd_20260923_arc_antes_COB_0u5338ae_22558_2_1
+-rw-r-----. 1 oracle oinstall  353466368 Sep 24 02:06 t24prd_20260923_arc_antes_COB_0u5338ae_22558_3_1
+-rw-r-----. 1 oracle oinstall 2145455104 Sep 24 01:45 t24prd_20260923_arc_antes_COB_0v5338af_22559_1_1
+-rw-r-----. 1 oracle oinstall 2145391616 Sep 24 02:02 t24prd_20260923_arc_antes_COB_0v5338af_22559_2_1
+-rw-r-----. 1 oracle oinstall  695098880 Sep 24 02:07 t24prd_20260923_arc_antes_COB_0v5338af_22559_3_1
+-rw-r-----. 1 oracle oinstall 2145517568 Sep 24 01:45 t24prd_20260923_arc_antes_COB_105338ag_22560_1_1
+-rw-r-----. 1 oracle oinstall 1640066048 Sep 24 01:59 t24prd_20260923_arc_antes_COB_105338ag_22560_2_1
+[oracle@ip-10-166-132-86 arch]$
