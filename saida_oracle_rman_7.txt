@@ -1,0 +1,374 @@
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ps -ef | grep pmon
+oracle   1080626       1  0 01:07 ?        00:00:00 ora_pmon_T24dev1
+oracle   1086909 1086696  0 01:22 pts/11   00:00:00 grep --color=auto pmon
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ . oraenv
+ORACLE_SID = [oracle] ? T24dev1
+The Oracle base has been changed from /u01/app/oracle/ to /u01/app/oracle
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ rman target /
+
+Recovery Manager: Release 19.0.0.0.0 - Production on Sun Nov 22 01:22:31 2026
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: T24RDBMS (DBID=3364865771, not open)
+
+RMAN>
+
+RMAN>
+
+RMAN> CATALOG START WITH '/FRA/20260923/arch/' NOPROMPT;
+
+using target database control file instead of recovery catalog
+searching for all files that match the pattern /FRA/20260923/arch/
+
+List of Files Unknown to the Database
+=====================================
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0r5338a9_22555_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0c53389n_22540_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0q5338a8_22554_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0r5338a9_22555_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0q5338a8_22554_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0u5338ae_22558_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0t5338ac_22557_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0u5338ae_22558_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0a53389m_22538_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0r5338a9_22555_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0a53389m_22538_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0v5338af_22559_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0o5338a5_22552_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0c53389n_22540_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0p5338a6_22553_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0a53389m_22538_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0t5338ac_22557_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0v5338af_22559_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0s5338aa_22556_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0v5338af_22559_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0o5338a5_22552_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0p5338a6_22553_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0p5338a6_22553_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0q5338a8_22554_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0u5338ae_22558_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0s5338aa_22556_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0t5338ac_22557_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0o5338a5_22552_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0s5338aa_22556_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0c53389n_22540_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_4_1
+cataloging files...
+cataloging done
+
+List of Cataloged Files
+=======================
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0r5338a9_22555_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0c53389n_22540_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0q5338a8_22554_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0r5338a9_22555_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0q5338a8_22554_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0u5338ae_22558_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0t5338ac_22557_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0u5338ae_22558_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0a53389m_22538_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0r5338a9_22555_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0a53389m_22538_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0v5338af_22559_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0o5338a5_22552_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0c53389n_22540_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0p5338a6_22553_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0a53389m_22538_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0t5338ac_22557_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0v5338af_22559_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0s5338aa_22556_1_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0f53389p_22543_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0k53389v_22548_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0v5338af_22559_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0o5338a5_22552_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0p5338a6_22553_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0p5338a6_22553_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0j53389u_22547_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0q5338a8_22554_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0u5338ae_22558_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0s5338aa_22556_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0t5338ac_22557_2_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0o5338a5_22552_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0s5338aa_22556_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0l5338a0_22549_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0d53389o_22541_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0m5338a2_22550_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0i53389s_22546_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0b53389n_22539_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0h53389r_22545_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0g53389q_22544_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0c53389n_22540_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_4_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0n5338a3_22551_3_1
+File Name: /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_0e53389o_22542_4_1
+
+RMAN> RESTORE DATABASE FROM TAG 'T24PRD_20260923_FULL' PREVIEW SUMMARY;
+
+Starting restore at 22-NOV-26
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=9 device type=DISK
+allocated channel: ORA_DISK_2
+channel ORA_DISK_2: SID=68 device type=DISK
+allocated channel: ORA_DISK_3
+channel ORA_DISK_3: SID=126 device type=DISK
+allocated channel: ORA_DISK_4
+channel ORA_DISK_4: SID=187 device type=DISK
+allocated channel: ORA_DISK_5
+channel ORA_DISK_5: SID=245 device type=DISK
+allocated channel: ORA_DISK_6
+channel ORA_DISK_6: SID=305 device type=DISK
+allocated channel: ORA_DISK_7
+channel ORA_DISK_7: SID=363 device type=DISK
+allocated channel: ORA_DISK_8
+channel ORA_DISK_8: SID=422 device type=DISK
+allocated channel: ORA_DISK_9
+channel ORA_DISK_9: SID=10 device type=DISK
+allocated channel: ORA_DISK_10
+channel ORA_DISK_10: SID=69 device type=DISK
+allocated channel: ORA_DISK_11
+channel ORA_DISK_11: SID=127 device type=DISK
+allocated channel: ORA_DISK_12
+channel ORA_DISK_12: SID=188 device type=DISK
+allocated channel: ORA_DISK_13
+channel ORA_DISK_13: SID=246 device type=DISK
+allocated channel: ORA_DISK_14
+channel ORA_DISK_14: SID=306 device type=DISK
+allocated channel: ORA_DISK_15
+channel ORA_DISK_15: SID=364 device type=DISK
+allocated channel: ORA_DISK_16
+channel ORA_DISK_16: SID=423 device type=DISK
+allocated channel: ORA_DISK_17
+channel ORA_DISK_17: SID=11 device type=DISK
+allocated channel: ORA_DISK_18
+channel ORA_DISK_18: SID=70 device type=DISK
+allocated channel: ORA_DISK_19
+channel ORA_DISK_19: SID=128 device type=DISK
+allocated channel: ORA_DISK_20
+channel ORA_DISK_20: SID=189 device type=DISK
+allocated channel: ORA_DISK_21
+channel ORA_DISK_21: SID=247 device type=DISK
+allocated channel: ORA_DISK_22
+channel ORA_DISK_22: SID=307 device type=DISK
+allocated channel: ORA_DISK_23
+channel ORA_DISK_23: SID=365 device type=DISK
+allocated channel: ORA_DISK_24
+channel ORA_DISK_24: SID=424 device type=DISK
+
+
+List of Backups
+===============
+Key     TY LV S Device Type Completion Time #Pieces #Copies Compressed Tag
+------- -- -- - ----------- --------------- ------- ------- ---------- ---
+22055   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22070   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22052   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22071   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22012   B  F  A DISK        23-SEP-26       13      1       YES        T24PRD_20260923_FULL
+22063   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22059   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22065   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22036   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22057   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22066   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22064   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22045   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22073   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22072   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22067   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22051   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22061   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22039   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22058   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22060   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22049   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22040   B  F  A DISK        23-SEP-26       14      1       YES        T24PRD_20260923_FULL
+22027   B  F  A DISK        23-SEP-26       13      1       YES        T24PRD_20260923_FULL
+using channel ORA_DISK_1
+using channel ORA_DISK_2
+using channel ORA_DISK_3
+using channel ORA_DISK_4
+using channel ORA_DISK_5
+using channel ORA_DISK_6
+using channel ORA_DISK_7
+using channel ORA_DISK_8
+using channel ORA_DISK_9
+using channel ORA_DISK_10
+using channel ORA_DISK_11
+using channel ORA_DISK_12
+using channel ORA_DISK_13
+using channel ORA_DISK_14
+using channel ORA_DISK_15
+using channel ORA_DISK_16
+using channel ORA_DISK_17
+using channel ORA_DISK_18
+using channel ORA_DISK_19
+using channel ORA_DISK_20
+using channel ORA_DISK_21
+using channel ORA_DISK_22
+using channel ORA_DISK_23
+using channel ORA_DISK_24
+
+
+List of Backups
+===============
+Key     TY LV S Device Type Completion Time #Pieces #Copies Compressed Tag
+------- -- -- - ----------- --------------- ------- ------- ---------- ---
+22121   B  A  A DISK        22-NOV-26       2       1       YES        T24PRD_20260923_ARC
+recovery will be done up to SCN 611190751085
+Media recovery start SCN is 611190751085
+Recovery must be done beyond SCN 611190772089 to clear datafile fuzziness
+Finished restore at 22-NOV-26
+
+RMAN> LIST BACKUP OF ARCHIVELOG SEQUENCE BETWEEN 45443 AND 45460 THREAD 1;
+
+
+List of Backup Sets
+===================
+
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+22121   3.53G      DISK        00:00:00     22-NOV-26
+
+  List of Archived Logs in backup set 22121
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    45443   611187595771 23-SEP-26 611193133416 23-SEP-26
+
+  Backup Set Copy #1 of backup set 22121
+  Device Type Elapsed Time Completion Time Compressed Tag
+  ----------- ------------ --------------- ---------- ---
+  DISK        00:00:00     22-NOV-26       YES        T24PRD_20260923_ARC
+
+    List of Backup Pieces for backup set 22121 Copy #1
+    BP Key  Pc# Status      Piece Name
+    ------- --- ----------- ----------
+    174449  1   AVAILABLE   /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_1_1
+    174458  2   AVAILABLE   /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_2_1
+
+RMAN>
+
+RMAN>
+
+RMAN> LIST BACKUP OF ARCHIVELOG SEQUENCE BETWEEN 50660 AND 50680 THREAD 2;
+
+
+List of Backup Sets
+===================
+
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+22121   3.53G      DISK        00:00:00     22-NOV-26
+
+  List of Archived Logs in backup set 22121
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  2    50660   611186170957 23-SEP-26 611190931661 23-SEP-26
+
+  Backup Set Copy #1 of backup set 22121
+  Device Type Elapsed Time Completion Time Compressed Tag
+  ----------- ------------ --------------- ---------- ---
+  DISK        00:00:00     22-NOV-26       YES        T24PRD_20260923_ARC
+
+    List of Backup Pieces for backup set 22121 Copy #1
+    BP Key  Pc# Status      Piece Name
+    ------- --- ----------- ----------
+    174449  1   AVAILABLE   /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_1_1
+    174458  2   AVAILABLE   /FRA/20260923/arch/t24prd_20260923_arc_antes_COB_105338ag_22560_2_1
+
+RMAN>
