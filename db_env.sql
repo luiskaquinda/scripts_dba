@@ -1,0 +1,34 @@
+SELECT parametro, valor
+FROM (
+    SELECT
+        SYS_CONTEXT('USERENV', 'SERVER_HOST')     AS CONNECTED_HOST,
+        SYS_CONTEXT('USERENV', 'INSTANCE_NAME')   AS INSTANCE_NAME,
+        SYS_CONTEXT('USERENV', 'DB_NAME')         AS DATABASE_NAME,
+        SYS_CONTEXT('USERENV', 'CON_NAME')        AS PDB_NAME,
+        SYS_CONTEXT('USERENV', 'SERVICE_NAME')    AS SERVICE_NAME,
+        i.version                                 AS DB_VERSION,
+        'Suporte Banco de Dados Oracle'           AS TASK_GRUPO_DESIGNADO
+    FROM v$instance i
+)
+UNPIVOT (
+    valor FOR parametro IN (
+        CONNECTED_HOST AS 'CONNECTED_HOST',
+        INSTANCE_NAME AS 'INSTANCE_NAME',
+        DATABASE_NAME AS 'DATABASE_NAME',
+        PDB_NAME AS 'PDB_NAME',
+        SERVICE_NAME AS 'SERVICE_NAME',
+        DB_VERSION AS 'DB_VERSION',
+        TASK_GRUPO_DESIGNADO AS 'TASK_GRUPO_DESIGNADO'
+    )
+)
+ORDER BY
+    CASE parametro
+        WHEN 'CONNECTED_HOST' THEN 1
+        WHEN 'INSTANCE_NAME' THEN 2
+        WHEN 'DATABASE_NAME' THEN 3
+        WHEN 'PDB_NAME' THEN 4
+        WHEN 'SERVICE_NAME' THEN 5
+        WHEN 'DB_VERSION' THEN 6
+        WHEN 'TASK_GRUPO_DESIGNADO' THEN 7
+    END;
+    
