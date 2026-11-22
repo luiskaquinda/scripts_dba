@@ -1,0 +1,11 @@
+
+SQL> select name, database_role, open_mode from v$database;
+
+NAME      DATABASE_ROLE    OPEN_MODE
+--------- ---------------- --------------------
+T24RDBMS  PRIMARY          READ WRITE
+
+SQL> !date
+Sun Nov 22 21:29:54 SAST 2026
+
+SQL>
