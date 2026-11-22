@@ -1,0 +1,1707 @@
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ cat /home/oracle/restore_t24dev1.log
+
+Recovery Manager: Release 19.0.0.0.0 - Production on Sun Nov 22 01:13:43 2026
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: T24RDBMS (DBID=3364865771, not open)
+
+RMAN>
+RMAN> RUN {
+2>   ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+3>   ALLOCATE CHANNEL c2 DEVICE TYPE DISK;
+4>   ALLOCATE CHANNEL c3 DEVICE TYPE DISK;
+5>   ALLOCATE CHANNEL c4 DEVICE TYPE DISK;
+6>   ALLOCATE CHANNEL c5 DEVICE TYPE DISK;
+7>   ALLOCATE CHANNEL c6 DEVICE TYPE DISK;
+8>
+9>   SET NEWNAME FOR DATABASE TO '/T24DEV1/DATAFILE/%b';
+10>
+11>   RESTORE DATABASE FROM TAG 'T24PRD_20260923_FULL';
+12>
+13>   SWITCH DATAFILE ALL;
+14>   SWITCH TEMPFILE ALL;
+15> }
+16>
+17>
+using target database control file instead of recovery catalog
+allocated channel: c1
+channel c1: SID=302 device type=DISK
+
+allocated channel: c2
+channel c2: SID=360 device type=DISK
+
+allocated channel: c3
+channel c3: SID=418 device type=DISK
+
+allocated channel: c4
+channel c4: SID=7 device type=DISK
+
+allocated channel: c5
+channel c5: SID=66 device type=DISK
+
+allocated channel: c6
+channel c6: SID=124 device type=DISK
+
+executing command: SET NEWNAME
+
+Starting restore at 22-NOV-26
+
+channel c1: starting datafile backup set restore
+channel c1: specifying datafile(s) to restore from backup set
+channel c1: restoring datafile 00005 to /T24DEV1/DATAFILE/undotbs2.1654.1199806247
+channel c1: restoring datafile 00059 to /T24DEV1/DATAFILE/t24data.2054.1199806247
+channel c1: restoring datafile 00084 to /T24DEV1/DATAFILE/t24data69.dbf
+channel c1: restoring datafile 00109 to /T24DEV1/DATAFILE/t24data93.dbf
+channel c1: restoring datafile 00134 to /T24DEV1/DATAFILE/t24data.1722.1222778865
+channel c1: restoring datafile 00158 to /T24DEV1/DATAFILE/t24data.1167.1238905481
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_1_1
+channel c2: starting datafile backup set restore
+channel c2: specifying datafile(s) to restore from backup set
+channel c2: restoring datafile 00060 to /T24DEV1/DATAFILE/t24data.1442.1199806259
+channel c2: restoring datafile 00085 to /T24DEV1/DATAFILE/t24data70.dbf
+channel c2: restoring datafile 00110 to /T24DEV1/DATAFILE/t24data94.dbf
+channel c2: restoring datafile 00111 to /T24DEV1/DATAFILE/t24data95.dbf
+channel c2: restoring datafile 00135 to /T24DEV1/DATAFILE/t24data.745.1222778887
+channel c2: restoring datafile 00159 to /T24DEV1/DATAFILE/t24data.1641.1238905501
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_1_1
+channel c3: starting datafile backup set restore
+channel c3: specifying datafile(s) to restore from backup set
+channel c3: restoring datafile 00027 to /T24DEV1/DATAFILE/t24data22.dbf
+channel c3: restoring datafile 00058 to /T24DEV1/DATAFILE/t24data.1613.1199806249
+channel c3: restoring datafile 00083 to /T24DEV1/DATAFILE/t24data68.dbf
+channel c3: restoring datafile 00108 to /T24DEV1/DATAFILE/t24data92.dbf
+channel c3: restoring datafile 00133 to /T24DEV1/DATAFILE/t24data.747.1222778843
+channel c3: restoring datafile 00157 to /T24DEV1/DATAFILE/t24data.1003.1235800715
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_1_1
+channel c4: starting datafile backup set restore
+channel c4: specifying datafile(s) to restore from backup set
+channel c4: restoring datafile 00010 to /T24DEV1/DATAFILE/t24data5.dbf
+channel c4: restoring datafile 00032 to /T24DEV1/DATAFILE/t24data27.dbf
+channel c4: restoring datafile 00066 to /T24DEV1/DATAFILE/t24data51.dbf
+channel c4: restoring datafile 00090 to /T24DEV1/DATAFILE/t24data75.dbf
+channel c4: restoring datafile 00091 to /T24DEV1/DATAFILE/ggssa_data_001.1395.1199806249
+channel c4: restoring datafile 00116 to /T24DEV1/DATAFILE/t24data.1293.1214802501
+channel c4: restoring datafile 00140 to /T24DEV1/DATAFILE/t24data.1128.1222779003
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_1_1
+channel c5: starting datafile backup set restore
+channel c5: specifying datafile(s) to restore from backup set
+channel c5: restoring datafile 00009 to /T24DEV1/DATAFILE/t24data4.dbf
+channel c5: restoring datafile 00031 to /T24DEV1/DATAFILE/t24data26.dbf
+channel c5: restoring datafile 00063 to /T24DEV1/DATAFILE/ggs_data_001.261.1199806249
+channel c5: restoring datafile 00065 to /T24DEV1/DATAFILE/t24data50.dbf
+channel c5: restoring datafile 00089 to /T24DEV1/DATAFILE/t24data74.dbf
+channel c5: restoring datafile 00115 to /T24DEV1/DATAFILE/t24data.956.1214802479
+channel c5: restoring datafile 00139 to /T24DEV1/DATAFILE/t24data.748.1222778981
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_1_1
+channel c6: starting datafile backup set restore
+channel c6: specifying datafile(s) to restore from backup set
+channel c6: restoring datafile 00014 to /T24DEV1/DATAFILE/t24data9.dbf
+channel c6: restoring datafile 00036 to /T24DEV1/DATAFILE/t24data31.dbf
+channel c6: restoring datafile 00070 to /T24DEV1/DATAFILE/t24data55.dbf
+channel c6: restoring datafile 00095 to /T24DEV1/DATAFILE/t24data79.dbf
+channel c6: restoring datafile 00120 to /T24DEV1/DATAFILE/t24data.692.1214802587
+channel c6: restoring datafile 00144 to /T24DEV1/DATAFILE/t24data.1273.1230872199
+channel c6: restoring datafile 00163 to /T24DEV1/DATAFILE/t24data.1276.1241327561
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_1_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_1_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 1
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_2_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_1_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 1
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_2_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_1_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 1
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_2_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_1_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 1
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_2_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_1_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 1
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_2_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_1_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 1
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_2_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_2_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 2
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_3_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_2_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 2
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_3_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_2_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 2
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_3_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_2_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 2
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_3_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_2_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 2
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_3_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_2_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 2
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_3_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_3_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 3
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_4_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_3_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 3
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_4_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_3_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 3
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_4_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_3_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 3
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_4_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_3_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 3
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_4_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_3_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 3
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_4_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_4_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 4
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_5_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_4_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 4
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_5_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_4_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 4
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_5_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_4_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 4
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_5_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_4_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 4
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_5_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_4_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 4
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_5_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_5_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 5
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_6_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_5_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 5
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_6_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_5_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 5
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_6_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_6_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 6
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_7_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_6_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 6
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_7_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_6_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 6
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_7_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_5_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 5
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_6_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_5_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 5
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_6_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_7_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 7
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_8_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_7_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 7
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_8_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_5_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 5
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_6_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_6_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 6
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_7_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_8_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 8
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_9_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_8_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 8
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_9_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_6_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 6
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_7_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_6_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 6
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_7_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_7_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 7
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_8_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_9_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 9
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_10_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_9_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 9
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_10_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_7_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 7
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_8_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_7_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 7
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_8_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_7_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 7
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_8_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_8_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 8
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_9_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_8_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 8
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_9_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_10_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 10
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_11_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_8_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 8
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_9_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_10_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 10
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_11_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_8_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 8
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_9_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_9_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 9
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_10_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_9_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 9
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_10_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_9_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 9
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_10_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_11_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 11
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_12_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_11_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 11
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_12_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_10_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 10
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_11_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_9_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 9
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_10_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_10_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 10
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_11_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_12_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 12
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_13_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_10_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 10
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_11_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_12_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 12
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_13_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_10_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 10
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_11_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_11_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 11
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_12_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_11_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 11
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_12_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_11_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 11
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_12_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_13_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 13
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_14_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_13_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 13
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_14_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_11_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 11
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_12_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_12_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 12
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_13_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_12_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 12
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_13_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_14_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 14
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_15_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_14_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 14
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_15_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_12_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 12
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_13_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_06532nof_22534_15_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 15
+channel c4: restore complete, elapsed time: 02:29:49
+channel c4: starting datafile backup set restore
+channel c4: specifying datafile(s) to restore from backup set
+channel c4: restoring datafile 00012 to /T24DEV1/DATAFILE/t24data7.dbf
+channel c4: restoring datafile 00034 to /T24DEV1/DATAFILE/t24data29.dbf
+channel c4: restoring datafile 00068 to /T24DEV1/DATAFILE/t24data53.dbf
+channel c4: restoring datafile 00093 to /T24DEV1/DATAFILE/t24data77.dbf
+channel c4: restoring datafile 00118 to /T24DEV1/DATAFILE/t24data.1777.1214802541
+channel c4: restoring datafile 00142 to /T24DEV1/DATAFILE/t24data.1555.1230872159
+channel c4: restoring datafile 00161 to /T24DEV1/DATAFILE/t24data.1727.1238905543
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_1_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_05532noe_22533_15_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 15
+channel c5: restore complete, elapsed time: 02:29:49
+channel c5: starting datafile backup set restore
+channel c5: specifying datafile(s) to restore from backup set
+channel c5: restoring datafile 00002 to /T24DEV1/DATAFILE/users.493.1199806249
+channel c5: restoring datafile 00008 to /T24DEV1/DATAFILE/t24data3.dbf
+channel c5: restoring datafile 00030 to /T24DEV1/DATAFILE/t24data25.dbf
+channel c5: restoring datafile 00064 to /T24DEV1/DATAFILE/t24data49.dbf
+channel c5: restoring datafile 00088 to /T24DEV1/DATAFILE/t24data73.dbf
+channel c5: restoring datafile 00114 to /T24DEV1/DATAFILE/t24data.847.1214802459
+channel c5: restoring datafile 00138 to /T24DEV1/DATAFILE/t24data.366.1222778957
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_1_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_13_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 13
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_14_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_03532noc_22531_13_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 13
+channel c2: restore complete, elapsed time: 02:32:19
+channel c2: starting datafile backup set restore
+channel c2: specifying datafile(s) to restore from backup set
+channel c2: restoring datafile 00015 to /T24DEV1/DATAFILE/t24data10.dbf
+channel c2: restoring datafile 00037 to /T24DEV1/DATAFILE/t24data32.dbf
+channel c2: restoring datafile 00071 to /T24DEV1/DATAFILE/t24data56.dbf
+channel c2: restoring datafile 00096 to /T24DEV1/DATAFILE/t24data80.dbf
+channel c2: restoring datafile 00121 to /T24DEV1/DATAFILE/t24data.1918.1214802607
+channel c2: restoring datafile 00145 to /T24DEV1/DATAFILE/t24data.939.1230872217
+channel c2: restoring datafile 00164 to /T24DEV1/DATAFILE/t24data.292.1241327579
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_1_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_12_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 12
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_13_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_07532nog_22535_14_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 14
+channel c3: restore complete, elapsed time: 02:32:59
+channel c3: starting datafile backup set restore
+channel c3: specifying datafile(s) to restore from backup set
+channel c3: restoring datafile 00013 to /T24DEV1/DATAFILE/t24data8.dbf
+channel c3: restoring datafile 00035 to /T24DEV1/DATAFILE/t24data30.dbf
+channel c3: restoring datafile 00069 to /T24DEV1/DATAFILE/t24data54.dbf
+channel c3: restoring datafile 00094 to /T24DEV1/DATAFILE/t24data78.dbf
+channel c3: restoring datafile 00119 to /T24DEV1/DATAFILE/t24data.1886.1214802561
+channel c3: restoring datafile 00143 to /T24DEV1/DATAFILE/t24data.473.1230872179
+channel c3: restoring datafile 00162 to /T24DEV1/DATAFILE/t24data.1561.1238905563
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_1_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_02532noa_22530_13_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 13
+channel c1: restore complete, elapsed time: 02:33:54
+channel c1: starting datafile backup set restore
+channel c1: specifying datafile(s) to restore from backup set
+channel c1: restoring datafile 00026 to /T24DEV1/DATAFILE/t24data21.dbf
+channel c1: restoring datafile 00039 to /T24DEV1/DATAFILE/t24index1.dbf
+channel c1: restoring datafile 00057 to /T24DEV1/DATAFILE/t24data.1438.1199806249
+channel c1: restoring datafile 00082 to /T24DEV1/DATAFILE/t24data67.dbf
+channel c1: restoring datafile 00107 to /T24DEV1/DATAFILE/t24data91.dbf
+channel c1: restoring datafile 00132 to /T24DEV1/DATAFILE/t24data.1171.1222778819
+channel c1: restoring datafile 00156 to /T24DEV1/DATAFILE/t24data.1610.1235800697
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_1_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_1_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 1
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_2_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_1_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 1
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_2_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_1_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 1
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_2_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_1_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 1
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_2_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_1_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 1
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_2_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_13_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 13
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_14_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_2_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 2
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_3_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_2_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 2
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_3_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_2_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 2
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_3_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_2_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 2
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_3_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_2_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 2
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_3_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_14_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 14
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_15_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vj532nnr_22515_15_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 15
+channel c6: restore complete, elapsed time: 02:57:59
+channel c6: starting datafile backup set restore
+channel c6: specifying datafile(s) to restore from backup set
+channel c6: restoring datafile 00016 to /T24DEV1/DATAFILE/t24data11.dbf
+channel c6: restoring datafile 00038 to /T24DEV1/DATAFILE/t24data33.dbf
+channel c6: restoring datafile 00072 to /T24DEV1/DATAFILE/t24data57.dbf
+channel c6: restoring datafile 00097 to /T24DEV1/DATAFILE/t24data81.dbf
+channel c6: restoring datafile 00122 to /T24DEV1/DATAFILE/t24data.1838.1214802629
+channel c6: restoring datafile 00146 to /T24DEV1/DATAFILE/t24data.1771.1230872237
+channel c6: restoring datafile 00165 to /T24DEV1/DATAFILE/t24data.1805.1241327597
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_1_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_3_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 3
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_4_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_3_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 3
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_4_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_3_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 3
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_4_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_3_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 3
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_4_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_3_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 3
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_4_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_1_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 1
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_2_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_4_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 4
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_5_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_4_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 4
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_5_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_4_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 4
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_5_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_4_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 4
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_5_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_4_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 4
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_5_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_2_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 2
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_3_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_5_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 5
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_6_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_5_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 5
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_6_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_5_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 5
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_6_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_5_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 5
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_6_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_5_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 5
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_6_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_3_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 3
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_4_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_6_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 6
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_7_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_6_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 6
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_7_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_6_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 6
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_7_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_6_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 6
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_7_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_4_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 4
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_5_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_7_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 7
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_8_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_7_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 7
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_8_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_7_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 7
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_8_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_5_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 5
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_6_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_8_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 8
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_9_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_6_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 6
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_7_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_7_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 7
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_8_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_9_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 9
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_10_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_6_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 6
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_7_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_7_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 7
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_8_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_8_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 8
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_9_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_8_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 8
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_9_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_8_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 8
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_9_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_10_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 10
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_11_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_8_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 8
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_9_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_9_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 9
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_10_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_9_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 9
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_10_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_9_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 9
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_10_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_11_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 11
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_12_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_9_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 9
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_10_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_10_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 10
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_11_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_10_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 10
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_11_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_10_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 10
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_11_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_7_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 7
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_8_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_10_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 10
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_11_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_12_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 12
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_13_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_11_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 11
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_12_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_8_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 8
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_9_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_11_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 11
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_12_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_11_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 11
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_12_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_13_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 13
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_14_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_11_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 11
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_12_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_12_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 12
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_13_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_9_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 9
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_10_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_14_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 14
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_15_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_04532nod_22532_15_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 15
+channel c5: restore complete, elapsed time: 02:29:22
+channel c5: starting datafile backup set restore
+channel c5: specifying datafile(s) to restore from backup set
+channel c5: restoring datafile 00024 to /T24DEV1/DATAFILE/t24data19.dbf
+channel c5: restoring datafile 00047 to /T24DEV1/DATAFILE/t24index9.dbf
+channel c5: restoring datafile 00055 to /T24DEV1/DATAFILE/t24data.1410.1199806259
+channel c5: restoring datafile 00080 to /T24DEV1/DATAFILE/t24data65.dbf
+channel c5: restoring datafile 00105 to /T24DEV1/DATAFILE/t24data89.dbf
+channel c5: restoring datafile 00130 to /T24DEV1/DATAFILE/t24data.305.1222778763
+channel c5: restoring datafile 00154 to /T24DEV1/DATAFILE/t24data.1025.1235800651
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_1_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_13_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 13
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_14_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_10_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 10
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_11_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_12_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 12
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_13_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_12_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 12
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_13_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_12_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 12
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_13_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_1_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 1
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_2_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_14_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 14
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_15_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_11_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 11
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_12_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_13_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 13
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_14_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_13_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 13
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_14_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_13_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 13
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_14_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vv532no6_22527_15_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 15
+channel c1: restore complete, elapsed time: 02:44:37
+channel c1: starting datafile backup set restore
+channel c1: specifying datafile(s) to restore from backup set
+channel c1: restoring datafile 00023 to /T24DEV1/DATAFILE/t24data18.dbf
+channel c1: restoring datafile 00045 to /T24DEV1/DATAFILE/t24index7.dbf
+channel c1: restoring datafile 00054 to /T24DEV1/DATAFILE/t24data.1421.1199806249
+channel c1: restoring datafile 00079 to /T24DEV1/DATAFILE/t24data64.dbf
+channel c1: restoring datafile 00104 to /T24DEV1/DATAFILE/t24data88.dbf
+channel c1: restoring datafile 00129 to /T24DEV1/DATAFILE/t24data.1991.1222778739
+channel c1: restoring datafile 00153 to /T24DEV1/DATAFILE/t24data.702.1235800627
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_1_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_2_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 2
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_3_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_14_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 14
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_15_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_14_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 14
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_15_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_14_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 14
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_15_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_12_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 12
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_13_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_1_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 1
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_2_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vh532nnq_22513_15_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 15
+channel c4: restore complete, elapsed time: 02:58:48
+channel c4: starting datafile backup set restore
+channel c4: specifying datafile(s) to restore from backup set
+channel c4: restoring datafile 00001 to /T24DEV1/DATAFILE/system.2034.1199806255
+channel c4: restoring datafile 00007 to /T24DEV1/DATAFILE/t24data2.dbf
+channel c4: restoring datafile 00029 to /T24DEV1/DATAFILE/t24data24.dbf
+channel c4: restoring datafile 00062 to /T24DEV1/DATAFILE/t24data.1604.1199806257
+channel c4: restoring datafile 00087 to /T24DEV1/DATAFILE/t24data72.dbf
+channel c4: restoring datafile 00113 to /T24DEV1/DATAFILE/t24data.1909.1214802441
+channel c4: restoring datafile 00137 to /T24DEV1/DATAFILE/t24data.1058.1222778935
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_1_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_3_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 3
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_4_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vk532nnr_22516_15_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 15
+channel c2: restore complete, elapsed time: 02:59:00
+channel c2: starting datafile backup set restore
+channel c2: specifying datafile(s) to restore from backup set
+channel c2: restoring datafile 00022 to /T24DEV1/DATAFILE/t24data17.dbf
+channel c2: restoring datafile 00043 to /T24DEV1/DATAFILE/t24index5.dbf
+channel c2: restoring datafile 00053 to /T24DEV1/DATAFILE/t24data.1495.1199806261
+channel c2: restoring datafile 00078 to /T24DEV1/DATAFILE/t24data63.dbf
+channel c2: restoring datafile 00103 to /T24DEV1/DATAFILE/t24data87.dbf
+channel c2: restoring datafile 00128 to /T24DEV1/DATAFILE/t24data.734.1222778717
+channel c2: restoring datafile 00152 to /T24DEV1/DATAFILE/t24data.1573.1235800607
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_1_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vi532nnr_22514_15_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 15
+channel c3: restore complete, elapsed time: 02:58:20
+channel c3: starting datafile backup set restore
+channel c3: specifying datafile(s) to restore from backup set
+channel c3: restoring datafile 00025 to /T24DEV1/DATAFILE/t24data20.dbf
+channel c3: restoring datafile 00046 to /T24DEV1/DATAFILE/t24index8.dbf
+channel c3: restoring datafile 00056 to /T24DEV1/DATAFILE/t24data.1380.1199806249
+channel c3: restoring datafile 00081 to /T24DEV1/DATAFILE/t24data66.dbf
+channel c3: restoring datafile 00106 to /T24DEV1/DATAFILE/t24data90.dbf
+channel c3: restoring datafile 00131 to /T24DEV1/DATAFILE/t24data.652.1222778797
+channel c3: restoring datafile 00155 to /T24DEV1/DATAFILE/t24data.1280.1235800673
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_1_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_4_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 4
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_5_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_2_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 2
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_3_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_1_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 1
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_2_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_1_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 1
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_2_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_1_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 1
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_2_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_13_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 13
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_14_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_5_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 5
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_6_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_3_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 3
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_4_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_2_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 2
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_3_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_2_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 2
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_3_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_2_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 2
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_3_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_14_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 14
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_15_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_6_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 6
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_7_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_4_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 4
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_5_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vl532nns_22517_15_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 15
+channel c6: restore complete, elapsed time: 03:01:53
+channel c6: starting datafile backup set restore
+channel c6: specifying datafile(s) to restore from backup set
+channel c6: restoring datafile 00003 to /T24DEV1/DATAFILE/sysaux.1375.1199806255
+channel c6: restoring datafile 00006 to /T24DEV1/DATAFILE/t24data1.dbf
+channel c6: restoring datafile 00028 to /T24DEV1/DATAFILE/t24data23.dbf
+channel c6: restoring datafile 00061 to /T24DEV1/DATAFILE/t24data.1388.1199806253
+channel c6: restoring datafile 00086 to /T24DEV1/DATAFILE/t24data71.dbf
+channel c6: restoring datafile 00112 to /T24DEV1/DATAFILE/t24data.1730.1214802421
+channel c6: restoring datafile 00136 to /T24DEV1/DATAFILE/t24data.735.1222778911
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_1_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_3_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 3
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_4_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_3_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 3
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_4_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_3_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 3
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_4_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_5_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 5
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_6_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_7_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 7
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_8_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_4_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 4
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_5_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_1_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 1
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_2_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_4_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 4
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_5_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_4_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 4
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_5_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_6_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 6
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_7_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_5_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 5
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_6_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_5_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 5
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_6_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_2_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 2
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_3_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_5_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 5
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_6_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_7_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 7
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_8_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_6_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 6
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_7_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_6_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 6
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_7_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_3_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 3
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_4_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_6_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 6
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_7_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_8_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 8
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_9_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_7_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 7
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_8_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_7_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 7
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_8_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_7_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 7
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_8_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_4_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 4
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_5_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_9_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 9
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_10_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_8_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 8
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_9_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_8_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 8
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_9_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_5_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 5
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_6_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_10_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 10
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_11_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_9_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 9
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_10_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_9_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 9
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_10_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_6_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 6
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_7_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_11_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 11
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_12_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_8_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 8
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_9_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_8_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 8
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_9_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_10_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 10
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_11_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_10_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 10
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_11_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_7_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 7
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_8_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_9_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 9
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_10_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_9_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 9
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_10_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_12_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 12
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_13_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_11_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 11
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_12_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_11_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 11
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_12_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_8_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 8
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_9_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_10_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 10
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_11_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_10_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 10
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_11_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_13_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 13
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_14_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_12_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 12
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_13_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_9_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 9
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_10_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_12_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 12
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_13_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_11_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 11
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_12_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_11_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 11
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_12_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_14_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 14
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_15_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_13_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 13
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_14_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_10_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 10
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_11_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vt532no4_22525_15_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 15
+channel c5: restore complete, elapsed time: 02:46:39
+channel c5: starting datafile backup set restore
+channel c5: specifying datafile(s) to restore from backup set
+channel c5: restoring datafile 00011 to /T24DEV1/DATAFILE/t24data6.dbf
+channel c5: restoring datafile 00033 to /T24DEV1/DATAFILE/t24data28.dbf
+channel c5: restoring datafile 00067 to /T24DEV1/DATAFILE/t24data52.dbf
+channel c5: restoring datafile 00092 to /T24DEV1/DATAFILE/t24data76.dbf
+channel c5: restoring datafile 00117 to /T24DEV1/DATAFILE/t24data.1674.1214802521
+channel c5: restoring datafile 00141 to /T24DEV1/DATAFILE/t24data.693.1222779027
+channel c5: restoring datafile 00160 to /T24DEV1/DATAFILE/t24data.1541.1238905521
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_1_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_13_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 13
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_14_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_12_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 12
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_13_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_12_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 12
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_13_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_14_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 14
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_15_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_11_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 11
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_12_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_1_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 1
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_2_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_01532no9_22529_15_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 15
+channel c4: restore complete, elapsed time: 02:29:48
+channel c4: starting datafile backup set restore
+channel c4: specifying datafile(s) to restore from backup set
+channel c4: restoring datafile 00004 to /T24DEV1/DATAFILE/undotbs1.1617.1199806269
+channel c4: restoring datafile 00017 to /T24DEV1/DATAFILE/t24data12.dbf
+channel c4: restoring datafile 00048 to /T24DEV1/DATAFILE/t24data.1436.1199806247
+channel c4: restoring datafile 00073 to /T24DEV1/DATAFILE/t24data58.dbf
+channel c4: restoring datafile 00098 to /T24DEV1/DATAFILE/t24data82.dbf
+channel c4: restoring datafile 00123 to /T24DEV1/DATAFILE/t24data.1908.1214802647
+channel c4: restoring datafile 00147 to /T24DEV1/DATAFILE/t24data.1469.1230872257
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_1_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_14_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 14
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_15_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_13_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 13
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_14_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_13_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 13
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_14_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_12_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 12
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_13_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vs532no2_22524_15_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 15
+channel c1: restore complete, elapsed time: 02:47:08
+channel c1: starting datafile backup set restore
+channel c1: specifying datafile(s) to restore from backup set
+channel c1: restoring datafile 00019 to /T24DEV1/DATAFILE/t24data14.dbf
+channel c1: restoring datafile 00041 to /T24DEV1/DATAFILE/t24index3.dbf
+channel c1: restoring datafile 00050 to /T24DEV1/DATAFILE/t24data.1598.1199806247
+channel c1: restoring datafile 00075 to /T24DEV1/DATAFILE/t24data60.dbf
+channel c1: restoring datafile 00100 to /T24DEV1/DATAFILE/t24data84.dbf
+channel c1: restoring datafile 00125 to /T24DEV1/DATAFILE/t24data.1790.1214802687
+channel c1: restoring datafile 00149 to /T24DEV1/DATAFILE/t24data.457.1230872295
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_1_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_2_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 2
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_3_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_1_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 1
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_2_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_14_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 14
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_15_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_14_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 14
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_15_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_13_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 13
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_14_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_1_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 1
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_2_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_3_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 3
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_4_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vr532no1_22523_15_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 15
+channel c2: restore complete, elapsed time: 02:46:36
+channel c2: starting datafile backup set restore
+channel c2: specifying datafile(s) to restore from backup set
+channel c2: restoring datafile 00020 to /T24DEV1/DATAFILE/t24data15.dbf
+channel c2: restoring datafile 00042 to /T24DEV1/DATAFILE/t24index4.dbf
+channel c2: restoring datafile 00051 to /T24DEV1/DATAFILE/t24data.1399.1199806259
+channel c2: restoring datafile 00076 to /T24DEV1/DATAFILE/t24data61.dbf
+channel c2: restoring datafile 00101 to /T24DEV1/DATAFILE/t24data85.dbf
+channel c2: restoring datafile 00126 to /T24DEV1/DATAFILE/t24data.1675.1214802707
+channel c2: restoring datafile 00150 to /T24DEV1/DATAFILE/t24data.1815.1230872315
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_1_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vu532no5_22526_15_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 15
+channel c3: restore complete, elapsed time: 02:46:43
+channel c3: starting datafile backup set restore
+channel c3: specifying datafile(s) to restore from backup set
+channel c3: restoring datafile 00018 to /T24DEV1/DATAFILE/t24data13.dbf
+channel c3: restoring datafile 00040 to /T24DEV1/DATAFILE/t24index2.dbf
+channel c3: restoring datafile 00049 to /T24DEV1/DATAFILE/t24data.1418.1199806249
+channel c3: restoring datafile 00074 to /T24DEV1/DATAFILE/t24data59.dbf
+channel c3: restoring datafile 00099 to /T24DEV1/DATAFILE/t24data83.dbf
+channel c3: restoring datafile 00124 to /T24DEV1/DATAFILE/t24data.1743.1214802667
+channel c3: restoring datafile 00148 to /T24DEV1/DATAFILE/t24data.1807.1230872275
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_1_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_2_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 2
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_3_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_4_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 4
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_5_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_2_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 2
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_3_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_14_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 14
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_15_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_1_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 1
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_2_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_1_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 1
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_2_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_3_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 3
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_4_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_3_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 3
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_4_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_5_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 5
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_6_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_00532no8_22528_15_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 15
+channel c6: restore complete, elapsed time: 02:39:33
+channel c6: starting datafile backup set restore
+channel c6: specifying datafile(s) to restore from backup set
+channel c6: restoring datafile 00021 to /T24DEV1/DATAFILE/t24data16.dbf
+channel c6: restoring datafile 00044 to /T24DEV1/DATAFILE/t24index6.dbf
+channel c6: restoring datafile 00052 to /T24DEV1/DATAFILE/t24data.2031.1199806259
+channel c6: restoring datafile 00077 to /T24DEV1/DATAFILE/t24data62.dbf
+channel c6: restoring datafile 00102 to /T24DEV1/DATAFILE/t24data86.dbf
+channel c6: restoring datafile 00127 to /T24DEV1/DATAFILE/t24data.1758.1222778693
+channel c6: restoring datafile 00151 to /T24DEV1/DATAFILE/t24data.1448.1230872341
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_1_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_2_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 2
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_3_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_2_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 2
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_3_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_4_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 4
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_5_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_4_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 4
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_5_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_1_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 1
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_2_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_6_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 6
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_7_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_3_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 3
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_4_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_3_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 3
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_4_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_5_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 5
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_6_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_5_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 5
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_6_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_2_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 2
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_3_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_4_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 4
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_5_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_4_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 4
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_5_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_6_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 6
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_7_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_6_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 6
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_7_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_3_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 3
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_4_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_5_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 5
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_6_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_5_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 5
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_6_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_7_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 7
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_8_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_4_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 4
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_5_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_7_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 7
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_8_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_7_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 7
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_8_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_6_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 6
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_7_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_6_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 6
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_7_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_8_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 8
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_9_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_5_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 5
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_6_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_8_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 8
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_9_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_7_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 7
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_8_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_7_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 7
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_8_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_8_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 8
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_9_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_6_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 6
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_7_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_9_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 9
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_10_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_9_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 9
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_10_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_8_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 8
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_9_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_8_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 8
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_9_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_9_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 9
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_10_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_10_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 10
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_11_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_7_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 7
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_8_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_10_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 10
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_11_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_9_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 9
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_10_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_9_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 9
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_10_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_10_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 10
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_11_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_11_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 11
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_12_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_8_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 8
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_9_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_11_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 11
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_12_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_10_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 10
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_11_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_10_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 10
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_11_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_11_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 11
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_12_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_9_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 9
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_10_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_12_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 12
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_13_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_11_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 11
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_12_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_12_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 12
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_13_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_11_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 11
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_12_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_12_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 12
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_13_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_10_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 10
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_11_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_13_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 13
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_14_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_12_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 12
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_13_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_13_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 13
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_14_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_12_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 12
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_13_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_11_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 11
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_12_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_13_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 13
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_14_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_13_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 13
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_14_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_13_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 13
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_14_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_14_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 14
+channel c5: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_15_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_14_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 14
+channel c1: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_15_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_12_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 12
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_13_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_14_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 14
+channel c4: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_15_1
+channel c5: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vg532nnq_22512_15_1 tag=T24PRD_20260923_FULL
+channel c5: restored backup piece 15
+channel c5: restore complete, elapsed time: 02:59:26
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_14_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 14
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_15_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_13_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 13
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_14_1
+channel c1: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vo532nnu_22520_15_1 tag=T24PRD_20260923_FULL
+channel c1: restored backup piece 15
+channel c1: restore complete, elapsed time: 02:44:37
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_14_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 14
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_15_1
+channel c4: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vm532nns_22518_15_1 tag=T24PRD_20260923_FULL
+channel c4: restored backup piece 15
+channel c4: restore complete, elapsed time: 02:54:17
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_14_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 14
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_15_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_15_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 15
+channel c2: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_16_1
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_15_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 15
+channel c3: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_16_1
+channel c2: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vp532nnv_22521_16_1 tag=T24PRD_20260923_FULL
+channel c2: restored backup piece 16
+channel c2: restore complete, elapsed time: 02:40:10
+channel c3: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vn532nnt_22519_16_1 tag=T24PRD_20260923_FULL
+channel c3: restored backup piece 16
+channel c3: restore complete, elapsed time: 02:40:23
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_15_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 15
+channel c6: reading from backup piece /FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_16_1
+channel c6: piece handle=/FRA/20260923/full/t24prd_20260923_full_antes_COB_vq532no0_22522_16_1 tag=T24PRD_20260923_FULL
+channel c6: restored backup piece 16
+channel c6: restore complete, elapsed time: 02:24:44
+Finished restore at 22-NOV-26
+
+datafile 1 switched to datafile copy
+input datafile copy RECID=440 STAMP=1249993076 file name=/T24DEV1/DATAFILE/system.2034.1199806255
+datafile 2 switched to datafile copy
+input datafile copy RECID=441 STAMP=1249993076 file name=/T24DEV1/DATAFILE/users.493.1199806249
+datafile 3 switched to datafile copy
+input datafile copy RECID=442 STAMP=1249993076 file name=/T24DEV1/DATAFILE/sysaux.1375.1199806255
+datafile 4 switched to datafile copy
+input datafile copy RECID=443 STAMP=1249993076 file name=/T24DEV1/DATAFILE/undotbs1.1617.1199806269
+datafile 5 switched to datafile copy
+input datafile copy RECID=444 STAMP=1249993076 file name=/T24DEV1/DATAFILE/undotbs2.1654.1199806247
+datafile 6 switched to datafile copy
+input datafile copy RECID=445 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data1.dbf
+datafile 7 switched to datafile copy
+input datafile copy RECID=446 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data2.dbf
+datafile 8 switched to datafile copy
+input datafile copy RECID=447 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data3.dbf
+datafile 9 switched to datafile copy
+input datafile copy RECID=448 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data4.dbf
+datafile 10 switched to datafile copy
+input datafile copy RECID=449 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data5.dbf
+datafile 11 switched to datafile copy
+input datafile copy RECID=450 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data6.dbf
+datafile 12 switched to datafile copy
+input datafile copy RECID=451 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data7.dbf
+datafile 13 switched to datafile copy
+input datafile copy RECID=452 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data8.dbf
+datafile 14 switched to datafile copy
+input datafile copy RECID=453 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data9.dbf
+datafile 15 switched to datafile copy
+input datafile copy RECID=454 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data10.dbf
+datafile 16 switched to datafile copy
+input datafile copy RECID=455 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data11.dbf
+datafile 17 switched to datafile copy
+input datafile copy RECID=456 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data12.dbf
+datafile 18 switched to datafile copy
+input datafile copy RECID=457 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data13.dbf
+datafile 19 switched to datafile copy
+input datafile copy RECID=458 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data14.dbf
+datafile 20 switched to datafile copy
+input datafile copy RECID=459 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data15.dbf
+datafile 21 switched to datafile copy
+input datafile copy RECID=460 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data16.dbf
+datafile 22 switched to datafile copy
+input datafile copy RECID=461 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data17.dbf
+datafile 23 switched to datafile copy
+input datafile copy RECID=462 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data18.dbf
+datafile 24 switched to datafile copy
+input datafile copy RECID=463 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data19.dbf
+datafile 25 switched to datafile copy
+input datafile copy RECID=464 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data20.dbf
+datafile 26 switched to datafile copy
+input datafile copy RECID=465 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data21.dbf
+datafile 27 switched to datafile copy
+input datafile copy RECID=466 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data22.dbf
+datafile 28 switched to datafile copy
+input datafile copy RECID=467 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data23.dbf
+datafile 29 switched to datafile copy
+input datafile copy RECID=468 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data24.dbf
+datafile 30 switched to datafile copy
+input datafile copy RECID=469 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data25.dbf
+datafile 31 switched to datafile copy
+input datafile copy RECID=470 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data26.dbf
+datafile 32 switched to datafile copy
+input datafile copy RECID=471 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data27.dbf
+datafile 33 switched to datafile copy
+input datafile copy RECID=472 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data28.dbf
+datafile 34 switched to datafile copy
+input datafile copy RECID=473 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data29.dbf
+datafile 35 switched to datafile copy
+input datafile copy RECID=474 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data30.dbf
+datafile 36 switched to datafile copy
+input datafile copy RECID=475 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data31.dbf
+datafile 37 switched to datafile copy
+input datafile copy RECID=476 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data32.dbf
+datafile 38 switched to datafile copy
+input datafile copy RECID=477 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data33.dbf
+datafile 39 switched to datafile copy
+input datafile copy RECID=478 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index1.dbf
+datafile 40 switched to datafile copy
+input datafile copy RECID=479 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index2.dbf
+datafile 41 switched to datafile copy
+input datafile copy RECID=480 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index3.dbf
+datafile 42 switched to datafile copy
+input datafile copy RECID=481 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index4.dbf
+datafile 43 switched to datafile copy
+input datafile copy RECID=482 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index5.dbf
+datafile 44 switched to datafile copy
+input datafile copy RECID=483 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index6.dbf
+datafile 45 switched to datafile copy
+input datafile copy RECID=484 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index7.dbf
+datafile 46 switched to datafile copy
+input datafile copy RECID=485 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index8.dbf
+datafile 47 switched to datafile copy
+input datafile copy RECID=486 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24index9.dbf
+datafile 48 switched to datafile copy
+input datafile copy RECID=487 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data.1436.1199806247
+datafile 49 switched to datafile copy
+input datafile copy RECID=488 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data.1418.1199806249
+datafile 50 switched to datafile copy
+input datafile copy RECID=489 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data.1598.1199806247
+datafile 51 switched to datafile copy
+input datafile copy RECID=490 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data.1399.1199806259
+datafile 52 switched to datafile copy
+input datafile copy RECID=491 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data.2031.1199806259
+datafile 53 switched to datafile copy
+input datafile copy RECID=492 STAMP=1249993076 file name=/T24DEV1/DATAFILE/t24data.1495.1199806261
+datafile 54 switched to datafile copy
+input datafile copy RECID=493 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1421.1199806249
+datafile 55 switched to datafile copy
+input datafile copy RECID=494 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1410.1199806259
+datafile 56 switched to datafile copy
+input datafile copy RECID=495 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1380.1199806249
+datafile 57 switched to datafile copy
+input datafile copy RECID=496 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1438.1199806249
+datafile 58 switched to datafile copy
+input datafile copy RECID=497 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1613.1199806249
+datafile 59 switched to datafile copy
+input datafile copy RECID=498 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.2054.1199806247
+datafile 60 switched to datafile copy
+input datafile copy RECID=499 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1442.1199806259
+datafile 61 switched to datafile copy
+input datafile copy RECID=500 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1388.1199806253
+datafile 62 switched to datafile copy
+input datafile copy RECID=501 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1604.1199806257
+datafile 63 switched to datafile copy
+input datafile copy RECID=502 STAMP=1249993077 file name=/T24DEV1/DATAFILE/ggs_data_001.261.1199806249
+datafile 64 switched to datafile copy
+input datafile copy RECID=503 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data49.dbf
+datafile 65 switched to datafile copy
+input datafile copy RECID=504 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data50.dbf
+datafile 66 switched to datafile copy
+input datafile copy RECID=505 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data51.dbf
+datafile 67 switched to datafile copy
+input datafile copy RECID=506 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data52.dbf
+datafile 68 switched to datafile copy
+input datafile copy RECID=507 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data53.dbf
+datafile 69 switched to datafile copy
+input datafile copy RECID=508 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data54.dbf
+datafile 70 switched to datafile copy
+input datafile copy RECID=509 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data55.dbf
+datafile 71 switched to datafile copy
+input datafile copy RECID=510 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data56.dbf
+datafile 72 switched to datafile copy
+input datafile copy RECID=511 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data57.dbf
+datafile 73 switched to datafile copy
+input datafile copy RECID=512 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data58.dbf
+datafile 74 switched to datafile copy
+input datafile copy RECID=513 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data59.dbf
+datafile 75 switched to datafile copy
+input datafile copy RECID=514 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data60.dbf
+datafile 76 switched to datafile copy
+input datafile copy RECID=515 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data61.dbf
+datafile 77 switched to datafile copy
+input datafile copy RECID=516 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data62.dbf
+datafile 78 switched to datafile copy
+input datafile copy RECID=517 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data63.dbf
+datafile 79 switched to datafile copy
+input datafile copy RECID=518 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data64.dbf
+datafile 80 switched to datafile copy
+input datafile copy RECID=519 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data65.dbf
+datafile 81 switched to datafile copy
+input datafile copy RECID=520 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data66.dbf
+datafile 82 switched to datafile copy
+input datafile copy RECID=521 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data67.dbf
+datafile 83 switched to datafile copy
+input datafile copy RECID=522 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data68.dbf
+datafile 84 switched to datafile copy
+input datafile copy RECID=523 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data69.dbf
+datafile 85 switched to datafile copy
+input datafile copy RECID=524 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data70.dbf
+datafile 86 switched to datafile copy
+input datafile copy RECID=525 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data71.dbf
+datafile 87 switched to datafile copy
+input datafile copy RECID=526 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data72.dbf
+datafile 88 switched to datafile copy
+input datafile copy RECID=527 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data73.dbf
+datafile 89 switched to datafile copy
+input datafile copy RECID=528 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data74.dbf
+datafile 90 switched to datafile copy
+input datafile copy RECID=529 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data75.dbf
+datafile 91 switched to datafile copy
+input datafile copy RECID=530 STAMP=1249993077 file name=/T24DEV1/DATAFILE/ggssa_data_001.1395.1199806249
+datafile 92 switched to datafile copy
+input datafile copy RECID=531 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data76.dbf
+datafile 93 switched to datafile copy
+input datafile copy RECID=532 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data77.dbf
+datafile 94 switched to datafile copy
+input datafile copy RECID=533 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data78.dbf
+datafile 95 switched to datafile copy
+input datafile copy RECID=534 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data79.dbf
+datafile 96 switched to datafile copy
+input datafile copy RECID=535 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data80.dbf
+datafile 97 switched to datafile copy
+input datafile copy RECID=536 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data81.dbf
+datafile 98 switched to datafile copy
+input datafile copy RECID=537 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data82.dbf
+datafile 99 switched to datafile copy
+input datafile copy RECID=538 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data83.dbf
+datafile 100 switched to datafile copy
+input datafile copy RECID=539 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data84.dbf
+datafile 101 switched to datafile copy
+input datafile copy RECID=540 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data85.dbf
+datafile 102 switched to datafile copy
+input datafile copy RECID=541 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data86.dbf
+datafile 103 switched to datafile copy
+input datafile copy RECID=542 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data87.dbf
+datafile 104 switched to datafile copy
+input datafile copy RECID=543 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data88.dbf
+datafile 105 switched to datafile copy
+input datafile copy RECID=544 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data89.dbf
+datafile 106 switched to datafile copy
+input datafile copy RECID=545 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data90.dbf
+datafile 107 switched to datafile copy
+input datafile copy RECID=546 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data91.dbf
+datafile 108 switched to datafile copy
+input datafile copy RECID=547 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data92.dbf
+datafile 109 switched to datafile copy
+input datafile copy RECID=548 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data93.dbf
+datafile 110 switched to datafile copy
+input datafile copy RECID=549 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data94.dbf
+datafile 111 switched to datafile copy
+input datafile copy RECID=550 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data95.dbf
+datafile 112 switched to datafile copy
+input datafile copy RECID=551 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1730.1214802421
+datafile 113 switched to datafile copy
+input datafile copy RECID=552 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1909.1214802441
+datafile 114 switched to datafile copy
+input datafile copy RECID=553 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.847.1214802459
+datafile 115 switched to datafile copy
+input datafile copy RECID=554 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.956.1214802479
+datafile 116 switched to datafile copy
+input datafile copy RECID=555 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1293.1214802501
+datafile 117 switched to datafile copy
+input datafile copy RECID=556 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1674.1214802521
+datafile 118 switched to datafile copy
+input datafile copy RECID=557 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1777.1214802541
+datafile 119 switched to datafile copy
+input datafile copy RECID=558 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1886.1214802561
+datafile 120 switched to datafile copy
+input datafile copy RECID=559 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.692.1214802587
+datafile 121 switched to datafile copy
+input datafile copy RECID=560 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1918.1214802607
+datafile 122 switched to datafile copy
+input datafile copy RECID=561 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1838.1214802629
+datafile 123 switched to datafile copy
+input datafile copy RECID=562 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1908.1214802647
+datafile 124 switched to datafile copy
+input datafile copy RECID=563 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1743.1214802667
+datafile 125 switched to datafile copy
+input datafile copy RECID=564 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1790.1214802687
+datafile 126 switched to datafile copy
+input datafile copy RECID=565 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1675.1214802707
+datafile 127 switched to datafile copy
+input datafile copy RECID=566 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1758.1222778693
+datafile 128 switched to datafile copy
+input datafile copy RECID=567 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.734.1222778717
+datafile 129 switched to datafile copy
+input datafile copy RECID=568 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1991.1222778739
+datafile 130 switched to datafile copy
+input datafile copy RECID=569 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.305.1222778763
+datafile 131 switched to datafile copy
+input datafile copy RECID=570 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.652.1222778797
+datafile 132 switched to datafile copy
+input datafile copy RECID=571 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1171.1222778819
+datafile 133 switched to datafile copy
+input datafile copy RECID=572 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.747.1222778843
+datafile 134 switched to datafile copy
+input datafile copy RECID=573 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1722.1222778865
+datafile 135 switched to datafile copy
+input datafile copy RECID=574 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.745.1222778887
+datafile 136 switched to datafile copy
+input datafile copy RECID=575 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.735.1222778911
+datafile 137 switched to datafile copy
+input datafile copy RECID=576 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1058.1222778935
+datafile 138 switched to datafile copy
+input datafile copy RECID=577 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.366.1222778957
+datafile 139 switched to datafile copy
+input datafile copy RECID=578 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.748.1222778981
+datafile 140 switched to datafile copy
+input datafile copy RECID=579 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1128.1222779003
+datafile 141 switched to datafile copy
+input datafile copy RECID=580 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.693.1222779027
+datafile 142 switched to datafile copy
+input datafile copy RECID=581 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1555.1230872159
+datafile 143 switched to datafile copy
+input datafile copy RECID=582 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.473.1230872179
+datafile 144 switched to datafile copy
+input datafile copy RECID=583 STAMP=1249993077 file name=/T24DEV1/DATAFILE/t24data.1273.1230872199
+datafile 145 switched to datafile copy
+input datafile copy RECID=584 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.939.1230872217
+datafile 146 switched to datafile copy
+input datafile copy RECID=585 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1771.1230872237
+datafile 147 switched to datafile copy
+input datafile copy RECID=586 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1469.1230872257
+datafile 148 switched to datafile copy
+input datafile copy RECID=587 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1807.1230872275
+datafile 149 switched to datafile copy
+input datafile copy RECID=588 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.457.1230872295
+datafile 150 switched to datafile copy
+input datafile copy RECID=589 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1815.1230872315
+datafile 151 switched to datafile copy
+input datafile copy RECID=590 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1448.1230872341
+datafile 152 switched to datafile copy
+input datafile copy RECID=591 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1573.1235800607
+datafile 153 switched to datafile copy
+input datafile copy RECID=592 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.702.1235800627
+datafile 154 switched to datafile copy
+input datafile copy RECID=593 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1025.1235800651
+datafile 155 switched to datafile copy
+input datafile copy RECID=594 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1280.1235800673
+datafile 156 switched to datafile copy
+input datafile copy RECID=595 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1610.1235800697
+datafile 157 switched to datafile copy
+input datafile copy RECID=596 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1003.1235800715
+datafile 158 switched to datafile copy
+input datafile copy RECID=597 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1167.1238905481
+datafile 159 switched to datafile copy
+input datafile copy RECID=598 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1641.1238905501
+datafile 160 switched to datafile copy
+input datafile copy RECID=599 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1541.1238905521
+datafile 161 switched to datafile copy
+input datafile copy RECID=600 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1727.1238905543
+datafile 162 switched to datafile copy
+input datafile copy RECID=601 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1561.1238905563
+datafile 163 switched to datafile copy
+input datafile copy RECID=602 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1276.1241327561
+datafile 164 switched to datafile copy
+input datafile copy RECID=603 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.292.1241327579
+datafile 165 switched to datafile copy
+input datafile copy RECID=604 STAMP=1249993078 file name=/T24DEV1/DATAFILE/t24data.1805.1241327597
+
+renamed tempfile 1 to /T24DEV1/DATAFILE/temp01.dbf in control file
+released channel: c1
+released channel: c2
+released channel: c3
+released channel: c4
+released channel: c5
+released channel: c6
+
+Recovery Manager complete.
+[oracle@ip-10-166-132-86 ~]$ ~
