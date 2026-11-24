@@ -1,0 +1,133 @@
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ps -ef | grep pmon
+oracle   1477829       1  0 Nov23 ?        00:00:03 ora_pmon_T24dev1
+oracle   2257644 2257515  0 17:04 pts/5    00:00:00 grep --color=auto pmon
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ . oraenv
+ORACLE_SID = [oracle] ? T24dev1
+The Oracle base has been changed from /u01/app/oracle/ to /u01/app/oracle
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbName T24dev2.ao.sbicdirectory.com -sid T24dev2
+-sysPassword oracle -systemPassword oracle -emConfiguration NONE -datafileDestination /T24DEV1/DATAFILE/ -storageType FS
+-characterSet AL32UTF8
+Enter SYS user password:
+
+Enter SYSTEM user password:
+
+[WARNING] [DBT-06208] The 'SYS' password entered does not conform to the Oracle recommended standards.
+   CAUSE:
+a. Oracle recommends that the password entered should be at least 8 characters in length, contain at least 1 uppercase character, 1 lower case character and 1 digit [0-9].
+b.The password entered is a keyword that Oracle does not recommend to be used as password
+   ACTION: Specify a strong password. If required refer Oracle documentation for guidelines.
+[WARNING] [DBT-06208] The 'SYSTEM' password entered does not conform to the Oracle recommended standards.
+   CAUSE:
+a. Oracle recommends that the password entered should be at least 8 characters in length, contain at least 1 uppercase character, 1 lower case character and 1 digit [0-9].
+b.The password entered is a keyword that Oracle does not recommend to be used as password
+   ACTION: Specify a strong password. If required refer Oracle documentation for guidelines.
+Prepare for db operation
+10% complete
+Copying database files
+Unable to copy the file "/tmp/oratab" to "/etc/oratab".
+40% complete
+Creating and starting Oracle instance
+42% complete
+46% complete
+50% complete
+54% complete
+60% complete
+Completing Database Creation
+66% complete
+69% complete
+70% complete
+Executing Post Configuration Actions
+100% complete
+Database creation complete. For details check the logfiles at:
+ /u01/app/oracle/cfgtoollogs/dbca/T24dev2.
+Database Information:
+Global Database Name:T24dev2.ao.sbicdirectory.com
+System Identifier(SID):T24dev2
+Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/T24dev2/T24dev2.log" for further details.
+-bash: -sysPassword: command not found
+-bash: -characterSet: command not found
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ sqlplus / as sysdba
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Tue Nov 24 17:32:06 2026
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL>
+SQL>
+SQL> SELECT NAME FROM V$DATABASE;
+
+NAME
+---------
+T24RDBMS
+
+SQL>
+SQL>
+SQL> QUIT
+Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ . oraenv
+ORACLE_SID = [T24dev1] ? T24dev2
+ORACLE_HOME = [/home/oracle] ?
+ORACLE_BASE environment variable is not being set since this
+information is not available for the current user ID oracle.
+You can set ORACLE_BASE manually if it is required.
+Resetting ORACLE_BASE to its previous value or ORACLE_HOME
+The Oracle base remains unchanged with value /u01/app/oracle
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ cat /u01/app/oracle/cfgtoollogs/dbca/T24dev2/T24dev2.log
+[ 2026-11-24 17:05:50.739 SAST ] [WARNING] [DBT-06208] The 'SYS' password entered does not conform to the Oracle recommended standards.
+[ 2026-11-24 17:05:50.739 SAST ] [WARNING] [DBT-06208] The 'SYSTEM' password entered does not conform to the Oracle recommended standards.
+[ 2026-11-24 17:05:51.974 SAST ] Prepare for db operation
+DBCA_PROGRESS : 10%
+[ 2026-11-24 17:05:52.040 SAST ] Copying database files
+[ 2026-11-24 17:05:52.061 SAST ] Unable to copy the file "/tmp/oratab" to "/etc/oratab".
+DBCA_PROGRESS : 40%
+[ 2026-11-24 17:06:57.388 SAST ] Creating and starting Oracle instance
+DBCA_PROGRESS : 42%
+DBCA_PROGRESS : 46%
+DBCA_PROGRESS : 50%
+DBCA_PROGRESS : 54%
+DBCA_PROGRESS : 60%
+[ 2026-11-24 17:09:24.914 SAST ] Completing Database Creation
+DBCA_PROGRESS : 66%
+DBCA_PROGRESS : 69%
+DBCA_PROGRESS : 70%
+[ 2026-11-24 17:11:19.960 SAST ] Executing Post Configuration Actions
+DBCA_PROGRESS : 100%
+[ 2026-11-24 17:11:19.962 SAST ] Database creation complete. For details check the logfiles at:
+ /u01/app/oracle/cfgtoollogs/dbca/T24dev2.
+Database Information:
+Global Database Name:T24dev2.ao.sbicdirectory.com
+System Identifier(SID):T24dev2
+[oracle@ip-10-166-132-86 ~]$
