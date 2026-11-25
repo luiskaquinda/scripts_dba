@@ -1,0 +1,422 @@
+[oracle@ip-10-166-132-86 ~]$ ps -ef | grep pmon
+oracle   1477829       1  0 Nov23 ?        00:00:05 ora_pmon_T24dev1
+oracle   2262734       1  0 Nov24 ?        00:00:02 ora_pmon_T24dev2
+oracle   2449756 2445112  0 13:18 pts/8    00:00:00 grep --color=auto pmon
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ . oraenv
+ORACLE_SID = [oracle] ? T24dev2
+The Oracle base has been changed from /u01/app/oracle/ to /u01/app/oracle
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs         31G     0   31G   0% /dev
+tmpfs            31G   16M   31G   1% /dev/shm
+tmpfs            13G  101M   13G   1% /run
+efivarfs        128K  4.3K  119K   4% /sys/firmware/efi/efivars
+/dev/nvme3n1p4  199G   42G  158G  21% /
+/dev/nvme3n1p3  960M  354M  607M  37% /boot
+/dev/nvme3n1p2  200M  7.7M  193M   4% /boot/efi
+tmpfs           6.2G     0  6.2G   0% /run/user/1000
+/dev/nvme1n1    5.1T  4.9T  172G  97% /T24DEV1
+/dev/nvme2n1    2.0T  1.6T  503G  76% /FRA
+/dev/nvme4n1    5.1T   36G  5.0T   1% /T24DEV2
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ mkdir -p /T24DEV2/{controlfile,DATAFILE,REDO,FRA,ARCH}
+mkdir: cannot create directory ‘/T24DEV2/controlfile’: Permission denied
+mkdir: cannot create directory ‘/T24DEV2/DATAFILE’: Permission denied
+mkdir: cannot create directory ‘/T24DEV2/REDO’: Permission denied
+mkdir: cannot create directory ‘/T24DEV2/FRA’: Permission denied
+mkdir: cannot create directory ‘/T24DEV2/ARCH’: Permission denied
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ exit
+logout
+[root@ip-10-166-132-86 ~]#
+[root@ip-10-166-132-86 ~]#
+[root@ip-10-166-132-86 ~]# mkdir -p /T24DEV2/{controlfile,DATAFILE,REDO,FRA,ARCH}
+[root@ip-10-166-132-86 ~]#
+[root@ip-10-166-132-86 ~]#
+[root@ip-10-166-132-86 ~]# cd /T24DEV2
+[root@ip-10-166-132-86 T24DEV2]#
+[root@ip-10-166-132-86 T24DEV2]#
+[root@ip-10-166-132-86 T24DEV2]# ll
+total 0
+drwxr-xr-x. 2 root root 6 Nov 25 14:47 ARCH
+drwxr-xr-x. 2 root root 6 Nov 25 14:47 DATAFILE
+drwxr-xr-x. 2 root root 6 Nov 25 14:47 FRA
+drwxr-xr-x. 2 root root 6 Nov 25 14:47 REDO
+drwxr-xr-x. 2 root root 6 Nov 25 14:47 controlfile
+[root@ip-10-166-132-86 T24DEV2]#
+[root@ip-10-166-132-86 T24DEV2]#
+[root@ip-10-166-132-86 T24DEV2]#
+[root@ip-10-166-132-86 T24DEV2]# su - oracle
+Last login: Wed Nov 25 12:07:45 SAST 2026 on pts/8
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ exit
+logout
+[root@ip-10-166-132-86 T24DEV2]#
+[root@ip-10-166-132-86 T24DEV2]#
+[root@ip-10-166-132-86 T24DEV2]# cd /u01/app/oracle/admin/
+[root@ip-10-166-132-86 admin]#
+[root@ip-10-166-132-86 admin]#
+[root@ip-10-166-132-86 admin]# ll
+total 0
+drwxr-xr-x. 3 oracle oinstall 24 May 27 11:04 T24RDBMS
+drwxr-xr-x. 4 oracle oinstall 37 Oct 18 23:02 T24ch
+drwxr-xr-x. 4 oracle oinstall 37 Jun  6 11:53 T24dev
+drwxr-xr-x. 4 oracle oracle   37 Oct 20 15:07 T24dev1
+drwxr-xr-x. 6 oracle oinstall 64 Nov 24 17:05 T24dev2
+drwxr-xr-x. 3 oracle oinstall 24 May 28 10:43 T24kvm
+drwxr-xr-x. 4 oracle oinstall 37 Sep  1 13:04 T24pp
+drwxr-xr-x. 3 oracle oinstall 24 Jun  5 15:06 T24rdbms
+drwxr-xr-x. 3 oracle oinstall 24 Sep  3 21:55 T24uat
+drwxr-xr-x. 3 oracle oinstall 19 Sep  2 22:10 T24uat1
+drwxr-xr-x. 6 oracle oinstall 64 May 19  2026 orcl
+drwxr-xr-x. 4 oracle oinstall 37 May 27 10:58 t24kvm
+[root@ip-10-166-132-86 admin]#
+[root@ip-10-166-132-86 admin]#
+[root@ip-10-166-132-86 admin]# cd T24dev2
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# ll
+total 12
+drwxr-x---. 2 oracle oracle   8192 Nov 25 12:00 adump
+drwxr-x---. 2 oracle oracle     20 Nov 24 17:09 dpdump
+drwxr-x---. 2 oracle oracle     36 Nov 24 17:09 pfile
+drwxr-xr-x. 2 oracle oinstall   44 Jul 28 06:44 xdb_wallet
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# pwd
+/u01/app/oracle/admin/T24dev2
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# chown -R oracle:oinstall /T24DEV2 /u01/app/oracle/admin/T24dev2
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# cp /home/oracle/initT24dev1_restore.ora /home/oracle/initT24dev2_restore.ora
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# vi /home/oracle/initT24dev2_restore.ora
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# sed -i -e "s#/T24DEV1#/T24DEV2#g" -e "s#T24dev1#T24dev2#g" /home/oracle/initT24dev2_restore.ora
+[root@ip-10-166-132-86 T24dev2]# grep -n -i "t24dev1" /home/oracle/initT24dev2_restore.ora
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# grep -E "db_name|db_unique_name|control_files|db_create|db_recovery|audit_file|dispatchers" /home/oracle/initT24dev2_restore.ora
+audit_file_dest='/u01/app/oracle/admin/T24dev2/adump'
+control_files='/T24DEV2/controlfile/control.ctl'
+db_create_file_dest='/T24DEV2'
+db_name='T24rdbms'
+dispatchers='(PROTOCOL=TCP) (SERVICE=T24dev2XDB)'
+db_unique_name='T24dev2'
+db_recovery_file_dest_size=300G
+db_recovery_file_dest='/T24DEV2/FRA'
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# su - oracle
+Last login: Wed Nov 25 14:49:10 SAST 2026 on pts/8
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ps -ef | grep -i pmon | grep -v grep
+oracle   1477829       1  0 Nov23 ?        00:00:05 ora_pmon_T24dev1
+oracle   2262734       1  0 Nov24 ?        00:00:02 ora_pmon_T24dev2
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ . oraenv
+ORACLE_SID = [oracle] ? T24dev2
+The Oracle base has been changed from /u01/app/oracle/ to /u01/app/oracle
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ sqlplus -s / as sysdba
+^C
+
+^Z
+^C
+
+
+
+
+select name   from v$datafile;
+
+NAME
+--------------------------------------------------------------------------------
+/u01/app/oracle/oradata/T24DEV2/system01.dbf
+/u01/app/oracle/oradata/T24DEV2/sysaux01.dbf
+/u01/app/oracle/oradata/T24DEV2/undotbs01.dbf
+/u01/app/oracle/oradata/T24DEV2/users01.dbf
+
+
+select instance_name from v$instance;
+
+INSTANCE_NAME
+----------------
+T24dev2
+
+
+select name   from v$datafile
+        union all select name   from v$tempfile
+        union all select member from v$logfile
+        union all select name   from v$controlfile;
+
+NAME
+--------------------------------------------------------------------------------
+/u01/app/oracle/oradata/T24DEV2/system01.dbf
+/u01/app/oracle/oradata/T24DEV2/sysaux01.dbf
+/u01/app/oracle/oradata/T24DEV2/undotbs01.dbf
+/u01/app/oracle/oradata/T24DEV2/users01.dbf
+/u01/app/oracle/oradata/T24DEV2/temp01.dbf
+/u01/app/oracle/oradata/T24DEV2/redo03.log
+/u01/app/oracle/oradata/T24DEV2/redo02.log
+/u01/app/oracle/oradata/T24DEV2/redo01.log
+/u01/app/oracle/oradata/T24DEV2/control01.ctl
+/u01/app/oracle/oradata/T24DEV2/control02.ctl
+
+10 rows selected.
+
+
+show parameter spfile
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+spfile                               string      /u01/app/oracle/product/19.3.0
+                                                 /dbhome_1/dbs/spfileT24dev2.or
+                                                 a
+
+
+quit
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls -d /u01/app/oracle/oradata/* 2>/dev/null
+/u01/app/oracle/oradata/ORCL  /u01/app/oracle/oradata/T24DEV2  /u01/app/oracle/oradata/T24KVM  /u01/app/oracle/oradata/T24RDBMS  /u01/app/oracle/oradata/t24kvm
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls -d /u01/app/oracle/admin/* 2>/dev/null
+/u01/app/oracle/admin/T24RDBMS  /u01/app/oracle/admin/T24dev1  /u01/app/oracle/admin/T24pp     /u01/app/oracle/admin/T24uat1
+/u01/app/oracle/admin/T24ch     /u01/app/oracle/admin/T24dev2  /u01/app/oracle/admin/T24rdbms  /u01/app/oracle/admin/orcl
+/u01/app/oracle/admin/T24dev    /u01/app/oracle/admin/T24kvm   /u01/app/oracle/admin/T24uat    /u01/app/oracle/admin/t24kvm
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls $ORACLE_HOME/dbs | grep -i t24dev2
+hc_T24dev2.dat
+lkT24DEV2
+orapwT24dev2
+spfileT24dev2.ora
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls -la /u01/app/oracle/oradata/T24DEV2/
+total 2556824
+drwxr-x---. 3 oracle oinstall       4096 Nov 24 17:07 .
+drwxr-xr-x. 6 oracle oinstall         77 Nov 24 17:05 ..
+-rw-r-----. 1 oracle oracle     10600448 Nov 25 15:32 control01.ctl
+-rw-r-----. 1 oracle oracle     10600448 Nov 25 15:32 control02.ctl
+drwxr-x---. 2 oracle oinstall          6 Jul 28 06:47 onlinelog
+-rw-r-----. 1 oracle oracle    209715712 Nov 25 15:00 redo01.log
+-rw-r-----. 1 oracle oracle    209715712 Nov 25 15:32 redo02.log
+-rw-r-----. 1 oracle oracle    209715712 Nov 24 22:00 redo03.log
+-rw-r-----. 1 oracle oracle    597696512 Nov 25 15:31 sysaux01.dbf
+-rw-r-----. 1 oracle oracle   1006641152 Nov 25 15:31 system01.dbf
+-rw-r-----. 1 oracle oracle     57679872 Nov 24 22:00 temp01.dbf
+-rw-r-----. 1 oracle oracle    356524032 Nov 25 15:31 undotbs01.dbf
+-rw-r-----. 1 oracle oracle      5251072 Nov 25 15:05 users01.dbf
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ . oraenv
+ORACLE_SID = [T24dev2] ? ^C
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ sqlplus / as sysdba
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Wed Nov 25 15:34:58 2026
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL>
+SQL>
+SQL> shutdown immediate;
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL>
+SQL>
+SQL> exit
+Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ps -ef | grep -i pmon | grep -v grep
+oracle   1477829       1  0 Nov23 ?        00:00:05 ora_pmon_T24dev1
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls -la /u01/app/oracle/oradata/T24DEV2/
+total 2556824
+drwxr-x---. 3 oracle oinstall       4096 Nov 24 17:07 .
+drwxr-xr-x. 6 oracle oinstall         77 Nov 24 17:05 ..
+-rw-r-----. 1 oracle oracle     10600448 Nov 25 15:35 control01.ctl
+-rw-r-----. 1 oracle oracle     10600448 Nov 25 15:35 control02.ctl
+drwxr-x---. 2 oracle oinstall          6 Jul 28 06:47 onlinelog
+-rw-r-----. 1 oracle oracle    209715712 Nov 25 15:00 redo01.log
+-rw-r-----. 1 oracle oracle    209715712 Nov 25 15:35 redo02.log
+-rw-r-----. 1 oracle oracle    209715712 Nov 24 22:00 redo03.log
+-rw-r-----. 1 oracle oracle    597696512 Nov 25 15:35 sysaux01.dbf
+-rw-r-----. 1 oracle oracle   1006641152 Nov 25 15:35 system01.dbf
+-rw-r-----. 1 oracle oracle     57679872 Nov 24 22:00 temp01.dbf
+-rw-r-----. 1 oracle oracle    356524032 Nov 25 15:35 undotbs01.dbf
+-rw-r-----. 1 oracle oracle      5251072 Nov 25 15:35 users01.dbf
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ rm -rf /u01/app/oracle/oradata/T24DEV2/
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ rm -f  $ORACLE_HOME/dbs/*T24dev2*
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ rm -rf /u01/app/oracle/admin/T24dev2
+[oracle@ip-10-166-132-86 ~]$ rm -rf /u01/app/oracle/cfgtoollogs/dbca/T24dev2
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ rm -rf /u01/app/oracle/diag/rdbms/t24dev2
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ grep -i t24dev2 /etc/oratab
+T24dev2:/u01/app/oracle/product/19.3.0/dbhome_1:N
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ vi /etc/oratab
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ exit
+logout
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#  vi /etc/oratab
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]#
+[root@ip-10-166-132-86 T24dev2]# su - oracle
+Last login: Wed Nov 25 15:21:19 SAST 2026 on pts/8
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ps -ef | grep -i pmon | grep -v grep
+oracle   1477829       1  0 Nov23 ?        00:00:05 ora_pmon_T24dev1
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls $ORACLE_HOME/dbs | grep -i t24dev2
+lkT24DEV2
+[oracle@ip-10-166-132-86 ~]$ rm -f $ORACLE_HOME/dbs/lkT24DEV2
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls $ORACLE_HOME/dbs | grep -i t24dev2
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls /u01/app/oracle/admin
+T24RDBMS  T24ch  T24dev  T24dev1  T24kvm  T24pp  T24rdbms  T24uat  T24uat1  orcl  t24kvm
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ grep -i t24dev2 /etc/oratab
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls -ltra /home/oracle/initT24dev2*
+-rw-r--r--. 1 root root 2841 Nov 25 15:13 /home/oracle/initT24dev2_restore.ora
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ echo $ORACLE_HOME
+/u01/app/oracle/product/19.3.0/dbhome_1
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ export SID=T24dev2 MNT=/T24DEV2 OH=/u01/app/oracle/product/19.3.0/dbhome_1
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ df -h $MNT; free -g
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme4n1    5.1T   36G  5.0T   1% /T24DEV2
+               total        used        free      shared  buff/cache   available
+Mem:              61          12          23           9          36          49
+Swap:              0           0           0
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ export ORACLE_SID=$SID ORACLE_HOME=$OH PATH=$OH/bin:$PATH
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ orapwd file=$OH/dbs/orapw${SID} entries=10
+
+Enter password for SYS:
+
+OPW-00029: Password complexity failed for SYS user : Password must not be too simple.
+[oracle@ip-10-166-132-86 ~]$ orapwd file=$OH/dbs/orapw${SID} entries=10
+
+Enter password for SYS:
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ cat $OH/dbs/orapw${SID}
+]\[ZORACLE Remote Password file
+YS▒p▒▒▒▒[▒▒~L▒▒▒G8M r▒▒P▒▒eT৉o▒▒▒Q▒▒▒y▒▒|>C▒G▒▒▒▒P▒▒▒+▒R▒>▒(▒t(▒▒▒
+?▒▒▒▒@▒▒▒7▒ƽ▒▒F▒▒yp▒▒H▒▒▒▒1▒▒<p▒G▒`1`G▒`1▒<=▒▒`1▒=@▒<▒▒`1 =`▒▒`▒Xc▒`▒▒`▒▒▒`▒▒▒`@▒▒`@▒▒`▒▒▒`▒▒`▒▒▒`@▒▒`▒▒`▒▒`@▒▒`▒▒`▒▒`▒▒`▒▒`1p▒<1=▒▒`1[oracle@ip-10-166-132-86 ~]$ xterm-256color:Ç^C
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ ls $OH/dbs | grep -i $SID
+orapwT24dev2
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ rman target /
+
+Recovery Manager: Release 19.0.0.0.0 - Production on Wed Nov 25 15:59:13 2026
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database (not started)
+
+RMAN>
+
+RMAN>
+
+RMAN> STARTUP NOMOUNT PFILE='/home/oracle/initT24dev2_restore.ora';
+
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of startup command at 11/25/2026 15:59:48
+RMAN-04014: startup failed: ORA-09925: Unable to create audit trail file
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 9925
+
+RMAN>
