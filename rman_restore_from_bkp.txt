@@ -5148,3 +5148,81 @@ RMAN>
 RMAN>
 
 RMAN>
+
+
+RMAN>
+
+RMAN>
+
+RMAN> RESTORE DATABASE FROM TAG 'T24PRD_20260923_FULL' PREVIEW SUMMARY;
+
+Starting restore at 25-NOV-26
+using channel ORA_DISK_1
+using channel ORA_DISK_2
+using channel ORA_DISK_3
+using channel ORA_DISK_4
+using channel ORA_DISK_5
+using channel ORA_DISK_6
+using channel ORA_DISK_7
+using channel ORA_DISK_8
+using channel ORA_DISK_9
+using channel ORA_DISK_10
+using channel ORA_DISK_11
+using channel ORA_DISK_12
+using channel ORA_DISK_13
+using channel ORA_DISK_14
+using channel ORA_DISK_15
+using channel ORA_DISK_16
+using channel ORA_DISK_17
+using channel ORA_DISK_18
+using channel ORA_DISK_19
+using channel ORA_DISK_20
+using channel ORA_DISK_21
+using channel ORA_DISK_22
+using channel ORA_DISK_23
+using channel ORA_DISK_24
+
+
+List of Backups
+===============
+Key     TY LV S Device Type Completion Time #Pieces #Copies Compressed Tag
+------- -- -- - ----------- --------------- ------- ------- ---------- ---
+22055   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22070   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22052   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22071   B  F  A DISK        23-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22012   B  F  A DISK        23-SEP-26       13      1       YES        T24PRD_20260923_FULL
+22063   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22059   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22065   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22036   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22057   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22066   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22064   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22045   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22073   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22072   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22067   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22051   B  F  A DISK        24-SEP-26       16      1       YES        T24PRD_20260923_FULL
+22061   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22039   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22058   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22060   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22049   B  F  A DISK        24-SEP-26       15      1       YES        T24PRD_20260923_FULL
+22040   B  F  A DISK        23-SEP-26       14      1       YES        T24PRD_20260923_FULL
+22027   B  F  A DISK        23-SEP-26       13      1       YES        T24PRD_20260923_FULL
+
+
+List of Backups
+===============
+Key     TY LV S Device Type Completion Time #Pieces #Copies Compressed Tag
+------- -- -- - ----------- --------------- ------- ------- ---------- ---
+22121   B  A  A DISK        25-NOV-26       2       1       YES        T24PRD_20260923_ARC
+recovery will be done up to SCN 611190751085
+Media recovery start SCN is 611190751085
+Recovery must be done beyond SCN 611190772089 to clear datafile fuzziness
+Finished restore at 25-NOV-26
+
+RMAN>
+
+
