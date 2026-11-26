@@ -1,0 +1,118 @@
+drwxr-xr-x. 2 oracle oracle     79 Nov 19 15:16 scripts
+-rw-r--r--. 1 oracle oracle   1143 Nov 19 16:34 t24dev1.ora
+drwxr-xr-x. 5 root   root       52 Nov 19 21:45 ..
+-rw-r--r--. 1 oracle oracle    405 Nov 22 01:04 restore_t24dev1.rman
+-rw-r--r--. 1 oracle oracle   2841 Nov 22 01:06 initT24dev1_restore.ora
+-rw-r--r--. 1 oracle oracle 133990 Nov 22 12:17 restore_t24dev1.log
+-rw-r--r--. 1 oracle oracle   1925 Nov 22 21:13 rename_redo.sql
+-rw-r--r--. 1 oracle oracle   1751 Nov 22 21:15 redolog_script.sql
+-rw-r--r--. 1 oracle oracle    458 Nov 23 10:35 hash_T24USER.sql
+-rw-r--r--. 1 root   root     2841 Nov 25 15:13 initT24dev2_restore.ora
+-rw-r--r--. 1 oracle oracle    405 Nov 25 16:46 restore_T24dev2.rman
+-rw-------. 1 oracle oracle     68 Nov 25 16:47 nohup.out
+-rw-------. 1 oracle oracle  34316 Nov 26 03:40 .bash_history
+drwx------. 9 oracle oracle   4096 Nov 26 03:40 .
+-rw-r--r--. 1 oracle oracle 133991 Nov 26 03:52 restore_T24dev2.log
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ tail -100f restore_T24dev2.log
+datafile 121 switched to datafile copy
+input datafile copy RECID=560 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1918.1214802607
+datafile 122 switched to datafile copy
+input datafile copy RECID=561 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1838.1214802629
+datafile 123 switched to datafile copy
+input datafile copy RECID=562 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1908.1214802647
+datafile 124 switched to datafile copy
+input datafile copy RECID=563 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1743.1214802667
+datafile 125 switched to datafile copy
+input datafile copy RECID=564 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1790.1214802687
+datafile 126 switched to datafile copy
+input datafile copy RECID=565 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1675.1214802707
+datafile 127 switched to datafile copy
+input datafile copy RECID=566 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1758.1222778693
+datafile 128 switched to datafile copy
+input datafile copy RECID=567 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.734.1222778717
+datafile 129 switched to datafile copy
+input datafile copy RECID=568 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1991.1222778739
+datafile 130 switched to datafile copy
+input datafile copy RECID=569 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.305.1222778763
+datafile 131 switched to datafile copy
+input datafile copy RECID=570 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.652.1222778797
+datafile 132 switched to datafile copy
+input datafile copy RECID=571 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1171.1222778819
+datafile 133 switched to datafile copy
+input datafile copy RECID=572 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.747.1222778843
+datafile 134 switched to datafile copy
+input datafile copy RECID=573 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1722.1222778865
+datafile 135 switched to datafile copy
+input datafile copy RECID=574 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.745.1222778887
+datafile 136 switched to datafile copy
+input datafile copy RECID=575 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.735.1222778911
+datafile 137 switched to datafile copy
+input datafile copy RECID=576 STAMP=1250308320 file name=/T24DEV2/DATAFILE/t24data.1058.1222778935
+datafile 138 switched to datafile copy
+input datafile copy RECID=577 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.366.1222778957
+datafile 139 switched to datafile copy
+input datafile copy RECID=578 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.748.1222778981
+datafile 140 switched to datafile copy
+input datafile copy RECID=579 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1128.1222779003
+datafile 141 switched to datafile copy
+input datafile copy RECID=580 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.693.1222779027
+datafile 142 switched to datafile copy
+input datafile copy RECID=581 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1555.1230872159
+datafile 143 switched to datafile copy
+input datafile copy RECID=582 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.473.1230872179
+datafile 144 switched to datafile copy
+input datafile copy RECID=583 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1273.1230872199
+datafile 145 switched to datafile copy
+input datafile copy RECID=584 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.939.1230872217
+datafile 146 switched to datafile copy
+input datafile copy RECID=585 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1771.1230872237
+datafile 147 switched to datafile copy
+input datafile copy RECID=586 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1469.1230872257
+datafile 148 switched to datafile copy
+input datafile copy RECID=587 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1807.1230872275
+datafile 149 switched to datafile copy
+input datafile copy RECID=588 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.457.1230872295
+datafile 150 switched to datafile copy
+input datafile copy RECID=589 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1815.1230872315
+datafile 151 switched to datafile copy
+input datafile copy RECID=590 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1448.1230872341
+datafile 152 switched to datafile copy
+input datafile copy RECID=591 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1573.1235800607
+datafile 153 switched to datafile copy
+input datafile copy RECID=592 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.702.1235800627
+datafile 154 switched to datafile copy
+input datafile copy RECID=593 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1025.1235800651
+datafile 155 switched to datafile copy
+input datafile copy RECID=594 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1280.1235800673
+datafile 156 switched to datafile copy
+input datafile copy RECID=595 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1610.1235800697
+datafile 157 switched to datafile copy
+input datafile copy RECID=596 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1003.1235800715
+datafile 158 switched to datafile copy
+input datafile copy RECID=597 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1167.1238905481
+datafile 159 switched to datafile copy
+input datafile copy RECID=598 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1641.1238905501
+datafile 160 switched to datafile copy
+input datafile copy RECID=599 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1541.1238905521
+datafile 161 switched to datafile copy
+input datafile copy RECID=600 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1727.1238905543
+datafile 162 switched to datafile copy
+input datafile copy RECID=601 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1561.1238905563
+datafile 163 switched to datafile copy
+input datafile copy RECID=602 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1276.1241327561
+datafile 164 switched to datafile copy
+input datafile copy RECID=603 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.292.1241327579
+datafile 165 switched to datafile copy
+input datafile copy RECID=604 STAMP=1250308321 file name=/T24DEV2/DATAFILE/t24data.1805.1241327597
+
+renamed tempfile 1 to /T24DEV2/DATAFILE/temp01.dbf in control file
+released channel: c1
+released channel: c2
+released channel: c3
+released channel: c4
+released channel: c5
+released channel: c6
+
+Recovery Manager complete.
