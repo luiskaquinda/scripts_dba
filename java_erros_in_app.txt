@@ -29,3 +29,158 @@ Caused by: oracle.jdbc.OracleDatabaseException: ORA-29548: Java system class rep
  
         at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:498)
         ... 21 more
+
+
+
+
+
+
+
+
+
+
+
+
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ . oraenv
+ORACLE_SID = [oracle] ? T24dev2
+The Oracle base has been changed from /u01/app/oracle/ to /u01/app/oracle
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ sqlplus / as sysdba
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Fri Nov 27 10:14:09 2026
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL>
+SQL> quit
+Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ $ORACLE_HOME/OPatch/opatch lspatches
+29585399;OCW RELEASE UPDATE 19.3.0.0.0 (29585399)
+29517242;Database Release Update : 19.3.0.0.190416 (29517242)
+
+OPatch succeeded.
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$
+[oracle@ip-10-166-132-86 ~]$ $ORACLE_HOME/OPatch/datapatch -verbose
+SQL Patching tool version 19.3.0.0.0 Production on Fri Nov 27 10:16:09 2026
+Copyright (c) 2012, 2019, Oracle.  All rights reserved.
+
+Log file for this invocation: /u01/app/oracle/cfgtoollogs/sqlpatch/sqlpatch_3504361_2026_11_27_10_16_09/sqlpatch_invocation.log
+
+Connecting to database...OK
+Gathering database info...done
+Bootstrapping registry and package to current versions...done
+Determining current state...done
+
+Current state of interim SQL patches:
+Interim patch 32067171 (OJVM RELEASE UPDATE: 19.10.0.0.210119 (32067171)):
+  Binary registry: Not installed
+  SQL registry: Rolled back with status END on 27-NOV-26 01.43.10.990426 AM
+
+Current state of release update SQL patches:
+  Binary registry:
+    19.3.0.0.0 Release_Update 190410122720: Installed
+  SQL registry:
+    Rolled back to 19.3.0.0.0 Release_Update 190410122720 with status INITIALIZE on 27-NOV-26 01.43.11.166398 AM
+
+Adding patches to installation queue and performing prereq checks...done
+Installation queue:
+  The following interim patches will be rolled back:
+    32067171 (OJVM RELEASE UPDATE: 19.10.0.0.210119 (32067171))
+  Patch 32218454 (Database Release Update : 19.10.0.0.210119 (32218454)):
+    Rollback from 19.10.0.0.0 Release_Update 210108185017 to 19.3.0.0.0 Release_Update 190410122720
+  No interim patches need to be applied
+
+Installing patches...
+Patch installation complete.  Total patches installed: 2
+
+Validating logfiles...done
+Patch 32067171 rollback: WITH ERRORS
+  logfile: /u01/app/oracle/cfgtoollogs/sqlpatch/32067171/23947975/32067171_rollback_T24RDBMS_2026Nov27_10_16_21.log (errors)
+  -> Error at line 55: script javavm/install/jvmpsupdi.sql
+      - SP2-0310: unable to open file "/u01/app/oracle/product/19.3.0/dbhome_1/javavm/install/jvmpsupdii.sql"
+Patch 32218454 rollback: WITH ERRORS
+  logfile: /u01/app/oracle/cfgtoollogs/sqlpatch/32218454/24018797/32218454_rollback_T24RDBMS_2026Nov27_10_16_21.log (errors)
+  -> Error at line 53695: script rdbms/admin/prvtgwm.sql
+      - Warning: Package Body created with compilation errors.
+  -> Error at line 53702: script rdbms/admin/prvtgwm.sql
+      - 827/11   PLS-00323: subprogram or cursor 'FINISHMOVE' is declared in a
+  -> Error at line 53705: script rdbms/admin/prvtgwm.sql
+      - 836/11   PLS-00323: subprogram or cursor 'UPDATEMETADATADISTRIB' is
+  -> Error at line 53712: script rdbms/admin/prvtgwm.sql
+      - 887/11   PLS-00323: subprogram or cursor 'IMPORTDATA2' is declared in a
+  -> Error at line 53728: script rdbms/admin/prvtgwm.sql
+      - 827/11   PLS-00323: subprogram or cursor 'FINISHMOVE' is declared in a
+  -> Error at line 53731: script rdbms/admin/prvtgwm.sql
+      - 836/11   PLS-00323: subprogram or cursor 'UPDATEMETADATADISTRIB' is
+  -> Error at line 53738: script rdbms/admin/prvtgwm.sql
+      - 887/11   PLS-00323: subprogram or cursor 'IMPORTDATA2' is declared in a
+  -> Error at line 56304: script rdbms/admin/prvtgwm.sql
+      - Warning: Package Body created with compilation errors.
+  -> Error at line 56311: script rdbms/admin/prvtgwm.sql
+      - 1736/11  PLS-00323: subprogram or cursor 'UPDATECHUNKLOCATIONREMOTE' is
+  -> Error at line 56336: script rdbms/admin/prvtgwm.sql
+      - 1736/11  PLS-00323: subprogram or cursor 'UPDATECHUNKLOCATIONREMOTE' is
+  -> Error at line 57063: script rdbms/admin/prvtgwm.sql
+      - Warning: Trigger created with compilation errors.
+  -> Error at line 57070: script rdbms/admin/prvtgwm.sql
+      - 0/0      PLS-00905: object GSMADMIN_INTERNAL.DBMS_GSM_POOLADMIN is invalid
+  -> Error at line 57087: script rdbms/admin/prvtgwm.sql
+      - Warning: Trigger created with compilation errors.
+  -> Error at line 57094: script rdbms/admin/prvtgwm.sql
+      - 0/0      PLS-00905: object GSMADMIN_INTERNAL.DBMS_GSM_POOLADMIN is invalid
+  -> Error at line 57101: script rdbms/admin/prvtgwm.sql
+      - Warning: Trigger created with compilation errors.
+  -> Error at line 57108: script rdbms/admin/prvtgwm.sql
+      - 0/0      PLS-00905: object GSMADMIN_INTERNAL.DBMS_GSM_POOLADMIN is invalid
+  -> Error at line 58631: script rdbms/admin/prvtgwmdb.plb
+      - Warning: Package Body created with compilation errors.
+  -> Error at line 58638: script rdbms/admin/prvtgwmdb.plb
+      - 827/11   PLS-00323: subprogram or cursor 'FINISHMOVE' is declared in a
+  -> Error at line 58641: script rdbms/admin/prvtgwmdb.plb
+      - 836/11   PLS-00323: subprogram or cursor 'UPDATEMETADATADISTRIB' is
+  -> Error at line 58648: script rdbms/admin/prvtgwmdb.plb
+      - 887/11   PLS-00323: subprogram or cursor 'IMPORTDATA2' is declared in a
+  -> Error at line 58664: script rdbms/admin/prvtgwmdb.plb
+      - 827/11   PLS-00323: subprogram or cursor 'FINISHMOVE' is declared in a
+  -> Error at line 58667: script rdbms/admin/prvtgwmdb.plb
+      - 836/11   PLS-00323: subprogram or cursor 'UPDATEMETADATADISTRIB' is
+  -> Error at line 58674: script rdbms/admin/prvtgwmdb.plb
+      - 887/11   PLS-00323: subprogram or cursor 'IMPORTDATA2' is declared in a
+  -> Error at line 61295: script rdbms/admin/prvtgwmpl.plb
+      - Warning: Package Body created with compilation errors.
+  -> Error at line 61302: script rdbms/admin/prvtgwmpl.plb
+      - 1736/11  PLS-00323: subprogram or cursor 'UPDATECHUNKLOCATIONREMOTE' is
+  -> Error at line 61327: script rdbms/admin/prvtgwmpl.plb
+      - 1736/11  PLS-00323: subprogram or cursor 'UPDATECHUNKLOCATIONREMOTE' is
+  -> Error at line 87104: script md/admin/sdoloadj.sql
+      - ORA-29516: Aurora assertion failure: Bogus uncaught exception
+      - ORA-00604: error occurred at recursive SQL level 1
+      - ORA-29532: Java call terminated by uncaught Java exception:
+      - java.lang.ArrayIndexOutOfBoundsException
+  -> Error at line 87160: script md/admin/sdoloadj.sql
+      - ORA-29516: Aurora assertion failure: Bogus uncaught exception
+      - ORA-00604: error occurred at recursive SQL level 1
+      - ORA-29532: Java call terminated by uncaught Java exception:
+      - java.lang.ArrayIndexOutOfBoundsException
+
+Please refer to MOS Note 1609718.1 and/or the invocation log
+/u01/app/oracle/cfgtoollogs/sqlpatch/sqlpatch_3504361_2026_11_27_10_16_09/sqlpatch_invocation.log
+for information on how to resolve the above errors.
+
+SQL Patching tool complete on Fri Nov 27 10:18:16 2026
+[oracle@ip-10-166-132-86 ~]$
+
